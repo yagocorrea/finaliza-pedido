@@ -1,0 +1,203 @@
+<div class="ContentPageVenda __is-EstruturaDupla __PageFinalizeSeuPagamento">
+  <div class="ContentPageVenda_Container __is-EstruturaDupla_Principal">
+    <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentPrincipal">
+        <div class="FinalizarPagamentoPix" [class.__is-hidden]="isExpirado()">
+          <div class="FinalizarPagamentoPix_Titulo">
+            <i class="fa-brands fa-pix"></i> Finalize seu pagamento
+          </div>
+          <div class="FinalizarPagamentoPix_QRCode" *ngIf="!!PIX_QR_CODE">
+            <img [src]="PIX_QR_CODE" alt="QR Code para pagamento" />
+          </div>
+          <div
+            class="FinalizarPagamentoPix_InstrucoesQRCode"
+            *ngIf="pagamento?.pixCodigo"
+          >
+            <span class="FinalizarPagamentoPix_InstrucoesQRCode_Desktop"
+              >Escaneie o QR code acima ou pague através do Pix Copia e Cola,
+              acessando seu internet banking e
+              <b>usando o código abaixo</b>:</span
+            >
+            <span class="FinalizarPagamentoPix_InstrucoesQRCode_Mobile"
+              >Pague através do Pix Copia e Cola, acessando seu internet banking
+              e <b>usando o código abaixo</b>:</span
+            >
+          </div>
+
+          <div
+            class="FinalizarPagamentoPix_InstrucoesQRCode"
+            *ngIf="!pagamento?.pixCodigo"
+          >
+            <span
+              >Abra o pagamento pelo <b>botão abaixo</b> para visualizar o
+              QRCode PIX, leia-o utilizando o app do seu banco e realize o
+              pagamento:</span
+            >
+          </div>
+          <div class="FinalizarPagamentoPix_CodigoDigitavel">
+            <input
+              [value]="INPUT_PIX_CODIGO"
+              class="FinalizarPagamentoPix_CodigoDigitavel_Input"
+            />
+            <div class="FinalizarPagamentoPix_CodigoDigitavel_Buttons">
+              <div class="CodigoDigitavel_Buttons_Item">
+                <button
+                  class="CodPix_Botao Buttons_Item_Elemento __is-CopiarCodigo __is-active"
+                  (click)="CopiarCodigo()"
+                  *ngIf="pagamento?.pixCodigo"
+                >
+                  <i class="fa-solid fa-copy"></i> Copiar código
+                </button>
+
+                <button
+                  class="CodPix_Botao Buttons_Item_Elemento __is-CopiarCodigo __is-active"
+                  (click)="AbrirLinkFatura()"
+                  *ngIf="!pagamento?.pixCodigo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Abrir Pagamento
+                </button>
+              </div>
+              <div class="CodigoDigitavel_Buttons_Item" *ngIf="possuiShare()">
+                <button
+                  class="Buttons_Item_Elemento __is-CompartilharLink"
+                  (click)="CompartilharData()"
+                >
+                  <i class="fa-solid fa-share-nodes"></i> Compartilhar Link
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="FinalizarPagamentoPix_BlocoInferior">
+            <div
+              class="FinalizarPagamentoPix_BlocoInferior_InstrucoesPixCodigo"
+            >
+              <div class="BlocoInferior_InstrucoesPixCodigo_Item __is-active">
+                <div class="InstrucoesPixCodigo_Item_Icone">?</div>
+                <div class="InstrucoesPixCodigo_Item_Texto">
+                  Como pagar com pix copia e cola
+                </div>
+              </div>
+              <div class="BlocoInferior_InstrucoesPixCodigo_Item">
+                <div class="InstrucoesPixCodigo_Item_Icone">1</div>
+                <div class="InstrucoesPixCodigo_Item_Texto">
+                  Abra o app do seu banco e acesse o ambiente Pix
+                </div>
+              </div>
+              <div class="BlocoInferior_InstrucoesPixCodigo_Item">
+                <div class="InstrucoesPixCodigo_Item_Icone">2</div>
+                <div class="InstrucoesPixCodigo_Item_Texto">
+                  Escolha a opção QR Code e escaneie a imagem acima
+                </div>
+              </div>
+              <div class="BlocoInferior_InstrucoesPixCodigo_Item">
+                <div class="InstrucoesPixCodigo_Item_Icone">3</div>
+                <div class="InstrucoesPixCodigo_Item_Texto">
+                  Confirme as informações e conclua o pagamento
+                </div>
+              </div>
+            </div>
+            <div class="FinalizarPagamentoPix_BlocoInferior_TimerPix">
+              <div class="BlocoInferior_TimerPix_Titulo">
+                <div class="TimerPix_Titulo_Icone">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="TimerPix_Titulo_Text">
+                  Aguardando confirmação de pagamento
+                </div>
+              </div>
+              <div class="BlocoInferior_TimerPix_Contador">
+                <div class="TimerPix_Contador_Tempo">
+                  {{ temporizador.getMinutes() }} :
+                  {{ temporizador.getSeconds().toString().padStart(2, "0") }}
+                </div>
+                <div class="TimerPix_Contador_Loading">
+                  <div class="spinner"></div>
+                </div>
+              </div>
+              <div class="BlocoInferior_TimerPix_Obs">
+                Decorrido o prazo, seu pedido será automaticamente cancelado.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="TempoExpiradoPix" [class.__is-hidden]="!isExpirado()">
+          <div class="TempoExpiradoPix_Container">
+            <div class="TempoExpiradoPix_Container_Icone">
+              <img src="assets/img/icone-tempo-expirado.svg" />
+            </div>
+            <div
+              class="TempoExpiradoPix_Container_Texto"
+              [class.__is-hidden]="!isTempZerado()"
+            >
+              O link de pagamento via Pix expirou. Gere um novo código ou
+              escolha uma outra forma de pagamento.
+            </div>
+            <div
+              class="TempoExpiradoPix_Container_Texto"
+              [class.__is-hidden]="isTempZerado()"
+            >
+              O link de pagamento do Pix expirou e seu pedido foi cancelado.
+              Clique no <b>botão abaixo</b> para fazer um novo pedido.
+            </div>
+            <div class="TempoExpiradoPix_Container_Buttons">
+              <div class="Container_Buttons_Item">
+                <button
+                  class="Buttons_Item_BTN __Solid"
+                  [class.__is-hidden]="!isTempZerado()"
+                  (click)="RestartTemporizador()"
+                >
+                  Gerar novo código para pagamento via Pix
+                </button>
+                <button
+                  class="Buttons_Item_BTN __Solid"
+                  [class.__is-hidden]="isTempZerado()"
+                  (click)="RestartProposta()"
+                >
+                  Gerar novo pedido
+                </button>
+              </div>
+              <div class="Container_Buttons_Item">
+                <button
+                  class="Buttons_Item_BTN __Outline"
+                  [class.__is-hidden]="!isTempZerado()"
+                  (click)="backHandler()"
+                >
+                  <i class="fa-solid fa-chevron-left"></i> Escolha outra forma
+                  de pagamento
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ContentPageVenda_Container __is-EstruturaDupla_Secundario">
+    <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentLateral">
+        <app-block-resumo-titular></app-block-resumo-titular>
+      </div>
+    </div>
+    <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentLateral">
+        <app-block-resumo-compra
+          [formaPagamento]="PIX_ENUM"
+          [isPaginaPix]="true"
+        ></app-block-resumo-compra>
+      </div>
+    </div>
+    <div class="ContentPageVenda_Container_Content __LateralResumoDaCompra">
+      <!-- <?php include 'lateral-resumo-da-compra-pix.php'; ?> -->
+    </div>
+  </div>
+</div>
+
+<!-- <a href="#" target="_self" class="ButtonVoltarV2 Color2">
+  <button class="ButtonVoltar_Item">
+    <i class="fas fa-chevron-left"></i> Retornar
+  </button>
+</a> -->
+
+<app-page-button-back-page (onClickEmitter)="backHandler()"></app-page-button-back-page>

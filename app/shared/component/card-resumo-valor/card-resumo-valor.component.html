@@ -1,0 +1,78 @@
+<div class="Content_Principal_ItemLayoutSecundario">
+  <div class="Principal_ItemLayoutSecundario_TituloPrincipal">Valor total:</div>
+
+  <div class="Principal_ItemLayoutSecundario_Box">
+    <div class="ItemLayoutSecundario_Box_Titulo">
+      {{ getTitulo() }}
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaSimples">
+      <div class="Box_LinhaSimples_Titulo">Valor do plano escolhido</div>
+      <div class="Box_LinhaSimples_ValorModelo1">
+        {{ getValorProposta() | currency }}
+      </div>
+    </div>
+    <div
+      class="ItemLayoutSecundario_Box_LinhaSimples"
+      *ngIf="getCicloPercentualDesconto()"
+    >
+      <div class="Box_LinhaSimples_Titulo">
+        Desconto no {{ getNomeFormaPgto() }}
+      </div>
+      <div class="Box_LinhaSimples_ValorModelo2">
+        <span class="LinhaSimples_ValorModelo2_Badge"
+          >{{ getCicloPercentualDesconto() }}%* de desconto</span
+        >
+        {{ getTextoDescontoMensalidades(mensagens.segunda) }}
+      </div>
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaSimples">
+      <div class="Box_LinhaSimples_Titulo">Taxa da plataforma on-line</div>
+      <div class="Box_LinhaSimples_ValorModelo1" *ngIf="valorTaxa">
+        {{ valorTaxa | currency }}
+      </div>
+      <div class="Box_LinhaSimples_ValorModelo1" *ngIf="!valorTaxa">Isento</div>
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaComplexa">
+      <div class="Box_LinhaComplexa_Titulo">
+        Valor total
+        <span class="LinhaComplexa_Titulo_Obs">{{
+          getTextoDescontoMensalidades(mensagens.primeira)
+        }}</span>
+      </div>
+      <div class="Box_LinhaComplexa_Valor">
+        {{ getValorTotal(true) | currency }}
+      </div>
+    </div>
+  </div>
+
+  <div class="Principal_ItemLayoutSecundario_Box" *ngIf="getDescontoMeses() && cicloPagamento != 12">
+    <div class="ItemLayoutSecundario_Box_Titulo">
+      A partir da {{ getDescontoMeses() + 1 }}ª {{ getTermoPgto() }} -
+      {{ isCartao() ? "CARTÃO" : "BOLETO ONLINE" }}
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaSimples">
+      <div class="Box_LinhaSimples_Titulo">Valor do plano escolhido</div>
+      <div class="Box_LinhaSimples_ValorModelo1">
+        {{ getValorProposta() | currency }}
+      </div>
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaSimples">
+      <div class="Box_LinhaSimples_Titulo">Taxa da plataforma on-line</div>
+      <div class="Box_LinhaSimples_ValorModelo1" *ngIf="valorTaxa">
+        {{ valorTaxa | currency }}
+      </div>
+      <div class="Box_LinhaSimples_ValorModelo1" *ngIf="!valorTaxa">Isento</div>
+    </div>
+    <div class="ItemLayoutSecundario_Box_LinhaComplexa">
+      <div class="Box_LinhaComplexa_Titulo">
+        Valor total
+        <span class="LinhaComplexa_Titulo_Obs"
+          >({{ getDescontoMeses() + 1 }}ª {{ getTermoPgto() }} em diante)</span
+        >
+      </div>
+      <div class="Box_LinhaComplexa_Valor">
+        {{ getValorTotal(false) | currency }}
+      </div>
+    </div>
+  </div>
+</div>

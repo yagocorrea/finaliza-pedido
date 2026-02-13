@@ -1,0 +1,49 @@
+<div class="ButtonAbrirTabela">
+  <button
+    class="ButtonAbrirTabela_Item __VejaTabela"
+    [class.__is-active]="!tabelaAberta"
+    (click)="tabelaAberta = true"
+  >
+    <i class="fa-solid fa-table-list"></i> Veja tabela de carência
+  </button>
+  <button
+    class="ButtonAbrirTabela_Item __FecharTabela"
+    [class.__is-active]="tabelaAberta"
+    (click)="tabelaAberta = false"
+  >
+    <i class="fa-solid fa-xmark"></i> Fechar tabela de carência
+  </button>
+</div>
+
+<div class="TabelaCarencias" [class.__is-active]="tabelaAberta">
+  <div class="TabelaCarencias_Container" *ngIf="!tabelaCustom else customTable">
+    <div class="TabelaCarencias_Content">
+      <div class="TabelaCarencias_Content_Fix">
+        <div class="TabelaCarencias_Content_Table">
+          <div class="TabelaCarencias_Content_HeaderCarenciaContratual">
+            Carência Contratual
+            <!-- <span class="Content_HeaderCarenciaContratual_Observacao">Carência Contratual</span> -->
+            <span class="Content_HeaderCarenciaContratual_ObservacaoV2"
+              >Carência dos planos Pessoa Física, conforme a forma de pagamento
+              das mensalidades.</span
+            >
+          </div>
+          <app-tabela-periodo-carencia [carencias]="carenciaNormal"></app-tabela-periodo-carencia>
+        </div>
+      </div>
+      <div class="Carencias_Obs">
+        <span *ngFor="let obs of observacoes">{{ obs }}<br /></span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #customTable >
+    <div class="TabelaCarencias_Content">
+      <app-custom-tabela-periodo-carencia></app-custom-tabela-periodo-carencia>
+        <div class="Carencias_Obs  __Center">
+          <span *ngFor="let obs of observacoes">{{ obs }}<br /></span>
+        </div>
+    </div>
+  </ng-template>
+
+</div>

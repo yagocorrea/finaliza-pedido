@@ -1,0 +1,833 @@
+//Tradicional
+.TabelaCarencias{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 64px;
+  .TabelaCarencias_Container {
+    max-width: 96%;
+    width: 1400px;
+  }
+  .TabelaCarencias_Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .TabelaCarencias_Content_Fix{
+      display: flex;
+      grid-gap: 16px;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .TabelaCarencias_Content_OBS{
+      display: flex;
+      font-size: 12px;
+      line-height: 14px;
+      color: #555;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      p{
+        text-align: center;
+      }
+    }
+    .TabelaCarencias_Content_HeaderCarenciaZERO{
+      padding: 16px 16px 12px 16px;
+      text-align: left;
+      background-image: linear-gradient(227deg, #ff9c00, #ff881b);
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: 16px 16px 0px 0px;
+      border: 4px solid #ffa51a;
+      border-bottom: inherit;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      &:before{
+        content: " ";
+        display: block;
+        width: 90px;
+        height: 77px;
+        background-image: url('../../../../../assets/img/img-carencia-zero-total.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -30px;
+        right: -10px;
+        transform: rotate(15deg);
+      }
+      .Content_HeaderCarenciaZERO_Principal{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        .Content_HeaderCarenciaZERO_MiniObs{
+          font-size: 10px;
+          font-weight: 400;
+        }
+      }
+      .Content_HeaderCarenciaZERO_Observacao{
+        display: block;
+        text-transform: none;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        margin: 4px 0px 8px 0px;
+        max-width: 85%;
+      }
+      .Content_HeaderCarenciaZERO_ObservacaoV2{
+        text-transform: none;
+        font-size: 10px;
+        line-height: 16px;
+        font-weight: 400;
+        display: block;
+        max-width: 100%;
+        .HeaderCarenciaZERO_ObservacaoV2_Destaque{
+          font-weight: 700;
+        }
+      }
+    }
+    .TabelaCarencias_Content_HeaderCarenciaContratual{
+      padding: 16px;
+      width: calc(100% - 40px);
+      text-align: left;
+      background-image: linear-gradient(45deg,#ededed,#e1e1e1);
+      color: #4c4c4c;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: 16px 16px 0px 0px;
+      border: 4px solid #ffffff;
+      border-bottom: inherit;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: -1;
+      .Content_HeaderCarenciaContratual_Observacao{
+        display: block;
+        text-transform: initial;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 26px;
+      }
+      .Content_HeaderCarenciaContratual_ObservacaoV2{
+        text-transform: none;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        margin-top: 6px;
+        display: block;
+        max-width: 90%;
+        .HeaderCarenciaContratual_ObservacaoV2_Destaque{
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+    .TabelaCarencias_Content_Table {
+      .Content_Table_FixTH{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        background-color: #f1f1f1;
+        border-radius: 0px 0px 16px 16px;
+
+        table {
+          border: none;
+
+          td {
+            align-items: center;
+          }
+        }
+      }
+      @media screen and (max-width: 950px) {
+        flex-direction: column;
+      }
+      .Content_Table_Item {
+        width: 100%;
+        tr:nth-child(odd) {
+          background-color: #ffffff;
+        }
+        tr:nth-child(even) {
+          background-color: #f1f1f1;
+
+          table {
+            width: 100%;
+          }
+        }
+        .Table_Item_Head{
+          min-height: 81px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.__CarenciaReduzida{
+            td{
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              grid-gap: 16px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              padding-top: 0px;
+              padding-bottom: 0px;
+            }
+            .__CarenciaReduzida_Img{
+              width: 72px;
+              transform: rotate(11deg);
+            }
+          }
+          .Item_Head_Title{
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 700;
+            color: #555;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            .Head_Title_Observacao{
+                display: block;
+                font-weight: 500;
+                font-size: 12px;
+            }
+          }
+        }
+        .Item_Head_Title{
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 700;
+            color: #555;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+            .Head_Title_Observacao{
+                display: block;
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+        .titleTabela{
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 700;
+            color: #555;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .textTable{
+            font-size: 14px;
+            line-height: 18px;
+            color: #555;
+        }
+        .titleTabelaDestaque{
+            font-size: 16px;
+            font-weight: 800;
+            color: #ff9c00;
+            display: block;
+            .titleTabelaDestaque_MiniOBS{
+                font-size: 10px;
+                font-weight: 500;
+            }
+        }
+
+        td.CarenciaTotal {
+          tr:first-child, tr td:nth-child(2) {
+            .textTable, .titleTabela, .titleTabelaDestaque {
+              color: white;
+            }
+          }
+          tr:first-child {
+            background-color: #1e00be;
+          }
+          tr td:nth-child(2) {
+            background-color: rgba(30,0,190,.8196078431);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.CarenciaReduzida_TD-Head{
+  border: 2px solid #f4bf36;
+  border-bottom: 0px;
+  background-color: #fff;
+  position: relative;
+  .titleTabela{
+    text-align: left;
+    &.__CarenciaReduzida{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      color: #1e00be!important;
+      .titleTabela_MiniObs{
+        font-size: 8px;
+        line-height: 8px;
+        padding-bottom: 8px;
+      }
+    }
+  }
+  &:after{
+    width: 80px;
+    height: 80px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -14px;
+    right: -12px;
+    background-image: url('../../../../../assets/img/img-carencia-zero-total.png');
+    background-size: cover;
+    transform: rotate(13deg);
+    background-color: #fff;
+    border-radius: 150px;
+    display: none;
+  }
+}
+
+.CarenciaReduzida_TD-Basic{
+  border-left: 2px solid #f4bf36;
+  border-right: 2px solid #f4bf36;
+  text-align: left;
+  &.__Final{
+    border-bottom: 2px solid #f4bf36;
+  }
+}
+
+@media screen and (max-width: 1260px){
+  .TabelaCarencias{
+    .TabelaCarencias_Container{
+      width: 90%;
+      .TabelaCarencias_Content{
+        .TabelaCarencias_Content_Fix{
+          width: 100%;
+          .TabelaCarencias_Content_Table{
+            .Content_Table_FixTH{
+              grid-template-columns: 1fr;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1140px){
+  .TabelaCarencias{
+    .TabelaCarencias_Container{
+      .TabelaCarencias_Content{
+        .TabelaCarencias_Content_Fix{
+          display: flex;
+          flex-direction: column-reverse;
+          .TabelaCarencias_Content_Table{
+            margin-top: 32px;
+            width: 100%;
+            .Content_Table_FixTH{
+              .Content_Table_Item{
+                width: 100%;
+              }
+            }
+          }
+        }
+        .TabelaCarencias_Content_OBS{
+          margin-top: 32px;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px){
+  .TabelaCarencias{
+    .TabelaCarencias_Container{
+      .TabelaCarencias_Content{
+        .TabelaCarencias_Content_Fix{
+          .TabelaCarencias_Content_HeaderCarenciaZERO{
+            text-align: left;
+            align-items: flex-start;
+            .Content_HeaderCarenciaZERO_ObservacaoV2{
+              font-size: 10px;
+              line-height: 14px;
+              max-width: 100%;
+              padding-right: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px){
+  .TabelaCarencias{
+    .TabelaCarencias_Container{
+      .TabelaCarencias_Content{
+        .TabelaCarencias_Content_Fix{
+          .TabelaCarencias_Content_Table{
+            .Content_Table_FixTH{
+              display: flex;
+              flex-direction: column;
+              .Content_Table_Item{
+                .Table_Item_Head{
+                  &.__CarenciaReduzida{
+                    padding-right: inherit;
+                    &:after{
+                      right: 10%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .TabelaCarencias {
+    .TabelaCarencias_Container {
+      width: 90%;
+      .TabelaCarencias_Content {
+        .TabelaCarencias_Content_Titulo{
+          font-size: 28px;
+          line-height: 34px;
+        }
+        .TabelaCarencias_Content_Subtitulo{
+          font-size: 18px;
+          line-height: 26px;
+        }
+        .TabelaCarencias_Content_Table {
+          padding-top: inherit;
+        }
+      }
+    }
+  }
+}
+// Invisivel
+%Hover{
+    -webkit-transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+}
+
+.RedeCredenciadaECarencias{
+    // background-image: url(../img/bg-redecredencial.png);
+    background-size: 20%;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.RedeCredenciadaECarencias_TabelaCarencias{
+    overflow-x: hidden;
+    background-color: #f1f1f1;
+    padding: 64px 0px;
+    display: flex;
+    justify-content: center;
+    .RedeCredenciadaECarencias_TabelaCarencias_Container{
+        width: 100%;
+        max-width: 95%;
+        display: flex;
+        justify-content: space-between;
+        grid-gap: 40px;
+        flex-direction: column;
+        .TabelaCarencias_Container_SideTwo{
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .Container_SideTwo_HeaderTabela{
+                background-color: #ffa72d;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 800;
+                padding: 12px;
+                border-radius: 8px 8px 0 0;
+                color: #fff;
+                box-shadow: 0 -2px 10px #ffca50bd;
+                border: 4px solid #ffd576;
+                border-bottom: inherit;
+                position: relative;
+                min-height: calc(100px - 36px);
+                &:after{
+                  content: ' ';
+                  width: 100px;
+                  height: 100px;
+                  display: block;
+                  position: absolute;
+                  top: -17px;
+                  right: -21px;
+                  background-image: url('../../../../../assets/img/img-carencia-zero-total.png');
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  transform: rotate(20deg);
+                }
+                &:before{
+                    content: ' ';
+                    display: block;
+                    background-color: #ffa72d;
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    bottom: -5px;
+                    right: 9%;
+                    transform: rotate(45deg);
+                  }
+                  .SideTwo_HeaderTabela_TituloFix{
+                    display: flex;
+                    .SideTwo_HeaderTabela_MiniNumber{
+                        font-size: 10px;
+                        font-weight: 400;
+                        margin-bottom: 8px;
+                        margin-left: 4%px;
+                    }
+                  }
+                  .SideTwo_HeaderTabela_Subtitulo{
+                    text-transform: initial;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                .SideTwo_HeaderTabel_ObsV2{
+                    text-transform: none;
+                    font-size: 11px;
+                    line-height: 15px;
+                    font-weight: 400;
+                    margin-top: 6px;
+                    display: block;
+                    padding-right: 64px;
+                }
+              }
+            .Container_SideTwo_Tabela{
+                border: 4px solid #fff;
+                border-top: inherit;
+                border-right: inherit;
+                width: calc(100% - 4px);
+                .SideTwo_Tabela_Titulo{
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 1fr;
+                    grid-gap: 16px;
+                    background-color: #0145fe;
+                    color: #fff;
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 700;
+                    text-align: left;
+                    padding: 0px 0px 0px 8px;
+                    min-height: 64px;
+                    :nth-child(3){
+                        border-left: 3px solid #ffb100;
+                        border-right: 3px solid #ffb100;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                    .Tabela_Titulo_Item{
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+                    .Tabel_Titulo_Item{
+                        display: flex;
+                        align-items: center;
+                        .Titulo_Item_MiniObs{
+                            font-size: 8px;
+                            line-height: 8px;
+                            padding-bottom: 6px;
+                            padding-left: 2px;
+                        }
+                    }
+                }
+                .SideTwo_Tabela_Row{
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 1fr;
+                    padding: 0px 0px 0px 8px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    min-height: 40px;
+                    grid-gap: 16px;
+                    background-color: #fff;
+                    &:nth-child(even){
+                        background-color: #ECECEC;
+                    }
+                    &.__is-destaque{
+                        color: #0145fe;
+                        font-weight: 700;
+                    }
+                    .Tabela_Row_Item {
+                        display: flex;
+                        align-items: center;
+                        &:last-child {
+                            text-align: center;
+                            border-left: 3px solid #ffb100;
+                            border-right: 3px solid #ffb100;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #0246fee6;
+                            box-shadow: 0 5px 8px #0046ff69;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .TabelaCarencias_Container_FixNovasTabelas{
+            display: flex;
+            flex-direction: row;
+            grid-gap: 24px;
+            justify-content: space-between;
+            align-items: flex-start;
+            .Container_FixNovasTabelas_Basicas{
+                display: flex;
+                flex-direction: row;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 4px solid #fff;
+                .TabelaCarencias_Container_SideTwo{
+                    max-width: 100%;
+                    .Container_SideTwo_Tabela{
+                        .SideTwo_Tabela_Titulo{
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        .SideTwo_Tabela_Row{
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                    &.__Basico{
+                        align-items: center;
+                        .Container_SideTwo_HeaderTabela{
+                            background-color: #e9e9e9;
+                            border-color: #e9e9e9;
+                            box-shadow: inherit;
+                            width: calc(100% - 32px);
+                            text-align: center;
+                            border-radius: 0px;
+                            &:after{
+                                display: none;
+                            }
+                            &:before{
+                                display: none;
+                            }
+                            .SideTwo_HeaderTabela_Titulo{
+                                color: #616161;
+                                font-size: 16px;
+                                line-height: 22px;
+                                text-align: center;
+                            }
+                            .SideTwo_HeaderTabela_Subtitulo{
+                                color: #616161;
+                                font-size: 12px;
+                                display: block;
+                                text-transform: none;
+                                font-weight: 500;
+                            }
+                        }
+                        .Container_SideTwo_Tabela{
+                            border: none;
+                            border-top: 4px solid #fff;
+                            .SideTwo_Tabela_Titulo{
+                                background-color: #fff;
+                                color: #676767;
+                                font-size: 14px;
+                                grid-template-columns: 2fr 1fr;
+                                .Tabel_Titulo_Item{
+                                    justify-content: center;
+                                }
+                            }
+                            .SideTwo_Tabela_Row{
+                                grid-template-columns: 2fr 1fr;
+                                .Tabela_Row_Item:nth-of-type(2) {
+                                    border-left: inherit !important;
+                                    border-right: inherit !important;
+                                    background-color: #f7f7f700 !important;
+                                    color: #353535 !important;
+                                    box-shadow: 1px 1px 20px #00000014;
+                                    min-width: 73px;
+                                }
+                                &.__is-destaque{
+                                    .Tabela_Row_Item{
+                                        color: #353535!important;
+                                    }
+                                }
+                            }
+                        }
+                        &.__CarenciaReduzida{
+                            .Container_SideTwo_HeaderTabela{
+                                display: flex;
+                                flex-direction: row;
+                                grid-gap: 16px;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 8px 12px;
+                                .SideTwo_HeaderTabela_LogotipoCarencia{
+                                    height: 72px;
+                                    transform: rotate(8deg);
+                                }
+                            }
+                            .SideTwo_Tabela_Titulo{
+                                .Tabel_Titulo_Item{
+                                    border-left: 2px solid #ffa72d;
+                                    border-right: 2px solid #ffa72d;
+                                    border-top: 2px solid #ffa72d;
+                                }
+                            }
+                            .SideTwo_Tabela_Row{
+                                .Tabela_Row_Item:nth-of-type(2) {
+                                    border-left: 2px solid #ffa72d!important;
+                                    border-right: 2px solid #ffa72d!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .TabelaCarencias_Container_SideTwo{
+                max-width: 420px;
+            }
+        }
+        .TabelaCarencias_Container_NovasObservacoes{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-gap: 6px;
+            .Container_NovasObservacoes_Item{
+                font-size: 12px;
+                line-height: 16px;
+                color: #454545;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_RedeCredenciada{
+            .RedeCredenciadaECarencias_TabelaCarencias{
+                .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_TabelaCarencias{
+          padding: 0;
+            .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                flex-direction: column;
+                grid-template-columns: 1fr;
+                .TabelaCarencias_Container_SideTwo{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-left: inherit;
+                    margin-top: 64px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_TabelaCarencias{
+            .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                .TabelaCarencias_Container_SideTwo{
+                    .Container_SideTwo_Observacao2{
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_TabelaCarencias{
+            .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                .TabelaCarencias_Container_FixNovasTabelas{
+                    .Container_FixNovasTabelas_Basicas{
+                        .TabelaCarencias_Container_SideTwo{
+                            &.__Basico{
+                                .Container_SideTwo_HeaderTabela{
+                                    padding: 8px 12px;
+                                    grid-gap: 4px;
+                                    min-height: calc(100px - 32px);
+                                    .SideTwo_HeaderTabela_Titulo{
+                                        display: inline-block;
+                                        font-size: 15px;
+                                        line-height: 21px;
+                                    }
+                                    .SideTwo_HeaderTabela_Subtitulo{
+                                        font-size: 10px;
+                                    }
+                                }
+                                &.__CarenciaReduzida{
+                                    .Container_SideTwo_HeaderTabela{
+                                        padding: 6px 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .TabelaCarencias_Container_SideTwo{
+                        max-width: 370px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_TabelaCarencias{
+            .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                .TabelaCarencias_Container_FixNovasTabelas{
+                    flex-direction: column-reverse;
+                    .TabelaCarencias_Container_SideTwo{
+                        max-width: 100%;
+                        .Container_SideTwo_HeaderTabela{
+                            width: calc(100% - 28px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 840px){
+    .RedeCredenciadaECarencias{
+        .RedeCredenciadaECarencias_TabelaCarencias{
+            .RedeCredenciadaECarencias_TabelaCarencias_Container{
+                .TabelaCarencias_Container_FixNovasTabelas{
+                    .Container_FixNovasTabelas_Basicas{
+                        flex-direction: column;
+                        grid-gap: 48px;
+                        width: calc(100% - 8px);
+                        .TabelaCarencias_Container_SideTwo{
+                            margin-top: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

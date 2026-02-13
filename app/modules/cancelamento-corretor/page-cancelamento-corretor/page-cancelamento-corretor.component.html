@@ -1,0 +1,27 @@
+<div class="ContentPageVenda __PageCancelamentoCorretor">
+  <div class="ContentPageVenda_Container">
+    <div class="ContentPageVenda_Container_Content">
+
+        <ng-container *ngIf="proposta?.statusProposta === 1 && !cancelamentoConcluido" >
+          <app-block-cancelar-proposta
+            [proposta]="proposta"
+            [corretor]="corretor"
+            (cancelarPropostaEmmiter)="handleCancelarProposta()"
+          ></app-block-cancelar-proposta>
+        </ng-container>
+
+        <ng-container  *ngIf="proposta?.statusProposta != 1 && !cancelamentoConcluido" >
+          <app-block-cancelamento-indisponivel [statusProposta]="proposta?.statusProposta" ></app-block-cancelamento-indisponivel>
+        </ng-container>
+
+        <ng-container *ngIf="cancelamentoConcluido" >
+          <div class="CancelamentoConcluidoContainer">
+            <i class="fa-solid fa-circle-check"></i>
+            <div class="CancelamentoConcluidoContainer_Title">Sucesso</div>
+            <div class="CancelamentoConcluidoContainer_Text">Cancelamento concluído</div>
+          </div>
+        </ng-container>
+    </div>
+  </div>
+</div>
+

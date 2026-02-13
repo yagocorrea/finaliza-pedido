@@ -1,0 +1,259 @@
+@use "../../../../scss/_variables.scss";
+
+.CardsFormasDePagamento {
+  margin-top: 30px;
+  .CardsFormasDePagamento_Container {
+    display: flex;
+    grid-gap: 30px;
+    flex-wrap: nowrap;
+    .CardsFormasDePagamento_Container_Item {
+      border: 1px solid var(--Color-MD2);
+      padding: 24px 12px;
+      transition: 150ms linear;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 16px;
+      justify-content: center;
+      width: calc(33% - 45px);
+      cursor: pointer;
+      .Container_Item_Head {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 14px;
+        .Item_Head_Icone {
+          i {
+            font-size: 40px;
+            color: var(--Color-MD1);
+            transition: 150ms linear;
+          }
+        }
+        .Item_Head_Titulo {
+          color: var(--Color-MD4);
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: bold;
+        }
+      }
+      .Container_Item_InfoSecundaria {
+        background-color: var(--Color-MD2);
+        padding: 8px 48px 8px 8px;
+        border-radius: 6px;
+        color: var(--Color-MD3);
+        font-size: 16px;
+        line-height: 22px;
+        position: relative;
+        margin-top: auto;
+        .Item_InfoSecundaria_BadgeDestacado {
+          background-image: url(../../../../assets/img/badge-bg-desconto.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          padding: 12px 12px;
+          font-weight: 700;
+          display: inline-block;
+          transform: rotate(344deg);
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          &.__PrecoComOBS {
+            text-align: center;
+            font-size: 18px;
+            line-height: 12px;
+            padding: 28px;
+            top: -24px;
+            right: -24px;
+            .InfoSecundaria_BadgeDestacado_Valor {
+              display: block;
+              .BadgeDestacado_Valor_Moeda {
+                font-size: 12px;
+              }
+            }
+            .InfoSecundaria_BadgeDestacado_TextoFinal {
+              font-size: 10px;
+              font-weight: 500;
+              b {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        box-shadow: -2px 5px 9px #0046ff2b;
+        .Item_Head_Icone {
+          i {
+            color: var(--Color-MD2);
+          }
+        }
+        .Container_Item_InfoSecundaria {
+          .Item_InfoSecundaria_BadgeDestacado {
+            animation: 1s animaBadgeInfoDestacado infinite;
+          }
+        }
+        .Container_Item_BadgeBounce {
+          .Item_BadgeBounce_Destaque {
+            animation: inherit;
+          }
+        }
+      }
+      &.__is-active {
+        box-shadow: -2px 5px 9px #0046ff2b;
+        background-color: var(--Color-MD2) !important;
+        .Item_Head_Icone {
+          i {
+            color: var(--Color-MD3);
+          }
+        }
+        .Item_Head_Titulo {
+          color: var(--Color-MD3) !important;
+        }
+        .Container_Item_InfoSecundaria {
+          background-color: var(--Color-MD1);
+        }
+       
+        &:after {
+          background-color: var(--Color-MD2) !important;
+        }
+        .Container_Item_BadgeBounce { 
+          .BadgeBounce_Destaque_TextoBasico {
+            color: #fff; 
+          }
+          .BadgeBounce_Destaque_TextoLegal {
+            color: #f1f1f1;
+          }
+          .Item_BadgeBounce_Destaque {
+            color: var(--Color-MD2) !important;
+            background-image: linear-gradient(45deg, #fff, #fff);
+            &.__Piscando {
+                animation: animaBadgePagamento 1.8s infinite;
+              }
+          }
+        }
+      }
+      .Container_Item_BadgeBounce {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 4px;
+        align-items: flex-end;
+        position: relative;
+        margin-right: -12px;
+
+        .BadgeBounce_Destaque_TextoBasico {
+          text-align: right;
+          font-size: 15px;
+          color: #373737;
+          font-weight: 600;
+          margin-right: 8px;
+        }
+
+        .BadgeBounce_Destaque_TextoLegal {
+          text-align: right;
+          font-size: 10px;
+          line-height: 12px;
+          color: #878787;
+          font-weight: 600;
+          margin-right: 8px;
+          max-width: 140px;
+        }
+
+        .Item_BadgeBounce_Destaque {
+          position: relative;
+          background-image: linear-gradient(45deg, var(--Color-MD2), var(--Color-MD1));
+          color: #fff;
+          padding: 8px 8px 8px 38px;
+          font-weight: 700;
+          font-size: 18px;
+          width: fit-content;
+          clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 15% 50%);
+
+          &.__Piscando {
+            animation: animaBadgePagamento 1.8s infinite;
+          }
+        }
+      }
+      &.__promo {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        animation: animate 6s linear infinite;
+
+        &:before {
+          content: ' ';
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          background: repeating-conic-gradient(from var(--aa), var(--Color-MD2) 0%, var(--Color-MD1) 5%, transparent 5%, transparent 40%, var(--Color-MD2) 50%);
+          animation: animate 10s linear infinite;
+        }
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          inset: 3px;
+          background-color: #fff;
+          z-index: 0;
+        }
+
+        .Container_Item_BadgeBounce {
+          z-index: 1;
+        }
+
+        .Container_Item_Head {
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .CardsFormasDePagamento {
+    &.__PixSelecionado {
+      display: none;
+    }
+  }
+}
+
+@keyframes animaBadgeInfoDestacado {
+  0% {
+    transform: scale(1) rotate(344deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(344deg);
+  }
+  100% {
+    transform: scale(1) rotate(344deg);
+  }
+}
+
+@keyframes animaBadgePagamento {
+  0% {
+    color: #fff;
+  }
+
+  50% {
+    color: #0000;
+  }
+
+  100% {
+    color: #fff;
+  }
+}
+
+@property --aa {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes animate {
+  0% {
+    --aa: 0deg;
+  }
+
+  100% {
+    --aa: 360deg;
+  }
+}

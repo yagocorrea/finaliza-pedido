@@ -1,0 +1,104 @@
+@use "../../../../scss/_variables.scss";
+
+.LateralResumoDaCompra {
+    
+    &_Content {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      
+      &_Titular {
+        background: #fff;
+        border-radius: 8px;
+        padding: 16px;
+  
+        .Container_Titular {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          padding-bottom: 12px;
+          border: 1px solid #e0e0e0;
+        }
+  
+        .Content_Titular_Item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+  
+          .Titular_Item_Titulo {
+            font-size: 12px;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+  
+          .Titular_Item_DetalheTexto {
+            font-size: 14px;
+            color: var(--Color-MD2);
+            font-weight: bold;
+          }
+        }
+        
+        .Titular {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          border-bottom: 1px solid #e0e0e0;
+          padding: 10px;
+
+          .Titular_Detalhe {
+            text-transform: uppercase;
+            font-size: 20px;
+          }
+        }
+  
+        .Dependente {
+          position: relative;
+          padding: 8px 0;
+
+          .Dependente_Titulo{
+            padding-left: 10px;
+          }
+          
+          .Dependente_Detalhe {
+            background: var(--Color-MD2);
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 7;
+          }
+        }
+  
+        .Total_Cadastrados {
+          margin-top: 12px;
+          font-weight: bold;
+          color: #333;
+          display: flex;
+          justify-content: space-between;
+          
+
+          .Total_Cadastrados_Titulo{
+            font-size: 18px !important;
+            text-transform: none !important;
+          }
+  
+          .Total_Cadastrados_Detalhe {
+            color: var(--Color-MD2);
+            font-weight: 600;
+            font-size: 20px !important;
+            text-transform: none !important;
+          }
+        }
+      }
+    }
+  }
+  
+  

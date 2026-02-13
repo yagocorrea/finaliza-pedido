@@ -1,0 +1,44 @@
+@use "../../../../scss/_variables.scss";
+
+h1 {
+    color: var(--cor-primaria);
+}
+.HeaderMaisDental {
+    padding: 30px;
+    background-color: var(--Color-MD3);
+    .HeaderMaisDental_Container{
+        display: flex;
+        flex-direction: row;
+        grid-gap: 40px;
+        justify-content: space-between;
+        .HeaderMaisDental_Container_LogotipoMaisdental {
+            height: 64px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .HeaderMaisDental_Container_LogotipoeNOSS {
+            height: 64px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+@media screen and (max-width: 640px){
+    .HeaderMaisDental{
+        .HeaderMaisDental_Container{
+            grid-gap: 24px;
+            .HeaderMaisDental_Container_LogotipoMaisdental{
+                height: 40px;
+                max-width: 100%;
+                object-fit: contain;
+            }
+            .HeaderMaisDental_Container_LogotipoeNOSS{
+                height: 40px;
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+

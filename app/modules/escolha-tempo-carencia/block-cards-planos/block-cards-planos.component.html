@@ -1,0 +1,33 @@
+<div id="CardsTempoCarencia">
+  <div
+    class="CardsTempoCarencia_Item"
+    *ngFor="let c of carencias"
+    [class.__no-carencia-zero]="!c.isCarenciaZero"
+    [class.__is-active]="cicloPagamento === c.valor"
+    [class.__is-Destaque]="cicloPagamento === c.valor"
+    [class.__is-CarenciaReduzida]="c.carencia.includes('Reduzida')"
+    [class.__is-CarenciaZero]="c.carencia.includes('Zero')"
+    (click)="setCicloPagamento(c.valor)"
+  >
+    <div class="CardsTempoCarencia_Item_Header">{{ c.carencia }}</div>
+    <div class="CardsTempoCarencia_Item_Content">
+      <div class="Item_Content_TituloTempo">{{ c.nome }}</div>
+      <div class="Item_Content_Preco">
+        <div class="Content_Preco_Text">a partir de</div>
+        <div class="Content_Preco_Valor">{{ c.total | currency }}*</div>
+      </div>
+      <div class="Item_Content_Obs">
+        <div class="Content_Obs_Text">
+          *Valor referente ao pagamento
+          <span class="Content_Obs_Destaque"
+            >{{ c.nome.toLowerCase() }} no pix</span
+          >
+        </div>
+        <div class="Content_Obs_Desconto">-{{ c.percentualDesconto }}%</div>
+      </div>
+    </div>
+    <button class="CardsTempoCarencia_Item_Button">
+      {{ cicloPagamento === c.valor ? "Escolhido" : "Selecionar" }}
+    </button>
+  </div>
+</div>

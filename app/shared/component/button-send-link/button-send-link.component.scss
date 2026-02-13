@@ -1,0 +1,34 @@
+@use "../../../../scss/_variables.scss";
+
+.EnviaEmail_Container_Button {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  a {
+    height: 100%;
+  }
+  button {
+    text-decoration: none;
+    height: 100%;
+  }
+  &.__Mail {
+    button {
+      background-color: #0000;
+      border: 1px solid var(--Color-MD2);
+      color: var(--Color-MD2);
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      grid-gap: 16px;
+      transition: 150ms linear;
+      align-items: center;
+      i {
+        font-size: 55px;
+      }
+      &:hover {
+        color: var(--Color-MD1);
+        border-color: var(--Color-MD1);
+      }
+    }
+  }
+}

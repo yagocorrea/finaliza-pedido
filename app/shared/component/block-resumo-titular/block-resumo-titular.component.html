@@ -1,0 +1,22 @@
+<div class="LateralResumoDaCompra">
+    <div class="LateralResumoDaCompra_Content">
+      <div class="LateralResumoDaCompra_Content_Titular">
+        <div class="Container_Titular">
+            <div class="Content_Titular_Item Titular">
+                <div class="Titular_Item_Titulo Titular_Titulo">Titular</div>
+                <div class="Titular_Item_DetalheTexto Titular_Detalhe">{{ Titular }}</div>
+            </div>
+            <div class="Content_Titular_Item Dependente">
+                <div class="Titular_Item_Titulo Dependente_Titulo">Total de dependentes</div>
+                <div class="Titular_Item_DetalheTexto Dependente_Detalhe">{{ totalDependentes }}</div>
+            </div>
+        </div>
+        <div class="Content_Titular_Item Total_Cadastrados">
+          <div class="Titular_Item_Titulo Total_Cadastrados_Titulo">Total de cadastrados</div>
+          <div class="Titular_Item_DetalheTexto Total_Cadastrados_Detalhe">
+            {{ totalCadastrados }} pessoa{{ totalCadastrados > 1 ? "s" : "" }}
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

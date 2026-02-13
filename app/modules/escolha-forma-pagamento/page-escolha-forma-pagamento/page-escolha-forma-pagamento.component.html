@@ -1,0 +1,63 @@
+<div class="ContentPageVenda __is-EstruturaDupla __PageFormaDePagamento">
+  <div class="ContentPageVenda_Container __is-EstruturaDupla_Principal">
+    <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentPrincipal">
+        <app-title-underline title="Escolha a forma de pagamento"></app-title-underline>
+
+        <app-block-cards-forma-pgto
+          [formaPagamento]="formaPagamento"
+          (setFormaPagamentoEmitter)="setFormaPagamento($event)"
+        ></app-block-cards-forma-pgto>
+
+        <div *ngIf="formaPagamento === FormaPagamentoRegras.PIX">
+          <app-block-pagamento-pix></app-block-pagamento-pix>
+        </div>
+
+        <div *ngIf="formaPagamento === FormaPagamentoRegras.CARTAO">
+          <app-block-pagamento-cartao></app-block-pagamento-cartao>
+        </div>
+
+        <div *ngIf="formaPagamento === FormaPagamentoRegras.BOLETO">
+          <app-block-pagamento-boleto></app-block-pagamento-boleto>
+        </div>
+
+        <div *ngIf="!formaPagamento" class="BannerMiolo">
+          <img
+            src="{{ custom.sistema.banners.mioloRetangular.desktop }}?t={{
+              time
+            }}"
+            alt="Banner Miolo"
+            alt="Banner"
+            class="BannerMiolo_Item"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ContentPageVenda_Container __is-EstruturaDupla_Secundario">
+    <div
+      class="ContentPageVenda_Container_Content"
+      *ngIf="btnEnviarLinkHabilitado"
+    >
+      <div class="ContentPageVenda_Container_ContentLateral">
+        <app-button-send-link></app-button-send-link>
+      </div>
+    </div>
+    <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentLateral">
+        <app-block-resumo-titular></app-block-resumo-titular>
+      </div>
+    </div>
+    <!-- <div class="ContentPageVenda_Container_Content">
+      <div class="ContentPageVenda_Container_ContentLateral">
+        <app-block-resumo-vida-valor></app-block-resumo-vida-valor>
+      </div>
+    </div> -->
+    <div class="ContentPageVenda_Container_Content">
+      <app-block-resumo-compra
+        [formaPagamento]="formaPagamento"
+      ></app-block-resumo-compra>
+    </div>
+  </div>
+  <app-page-button-back-page (onClickEmitter)="backHandler()"></app-page-button-back-page>
+</div>

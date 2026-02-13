@@ -1,0 +1,1334 @@
+<!--Tradidional-->
+<div class="TabelaCarencias" id="TabelaCarencias" *ngIf="linha.includes('Tradicional')" >
+        <div class="TabelaCarencias_Container">
+            <div class="TabelaCarencias_Content">
+
+                <div class="TabelaCarencias_Content_Fix">
+                    <div class="TabelaCarencias_Content_Table">
+                        <div class="TabelaCarencias_Content_HeaderCarenciaContratual">
+                            Carência Contratual
+                            <span class="Content_HeaderCarenciaContratual_ObservacaoV2">Carência dos planos Pessoa Física, conforme a forma de pagamento das mensalidades.</span>
+                        </div>
+                        <div class="Content_Table_FixTH">
+                            <table class="Content_Table_Item" cellpadding="16" cellspacing="0" [border]="0">
+                                <tr class="Table_Item_Head">
+                                    <td [align]="'center'">
+                                        <span class="Item_Head_Title">PAGAMENTO MENSAL <span class="Head_Title_Observacao">(Boleto ou Pix)</span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellpadding="8" cellspacing="0" [border]="1" bordercolor="#c3c3c3">
+                                            <tr>
+                                                <td>
+                                                    <span class="titleTabela"><b>Procedimentos</b></span>
+                                                </td>
+                                                <td>
+                                                    <span class="titleTabela"><b>Carência</b></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Urgência e emergência</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">24h</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Consulta</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Radiologia</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Proc. Preventivo</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Dentística</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Periodontia</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">120 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Endodontia</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">120 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Prótese</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">180 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Cirurgia</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Clareamento com moldeira (Gel + Moldeira) Dental III</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Clareamento em Consultório</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Ortodontia Dental IV</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Ortodontia Dental III</span>
+                                                </td>
+                                                <td>
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table class="Content_Table_Item" cellpadding="16" cellspacing="0" [border]="0">
+                                <tr class="Table_Item_Head __CarenciaReduzida">
+                                    <td [align]="'center'">
+                                        <span class="Item_Head_Title">PAGAMENTO MENSAL <span class="Head_Title_Observacao">(Cartão de crédito)</span> </span>
+                                        <img src="assets/img/img-carencia-reduzida.png" class="__CarenciaReduzida_Img" alt="Carência Reduzida" title="Carência Reduzida">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellpadding="8" cellspacing="0" [border]="1" bordercolor="#c3c3c3">
+                                            <tr>
+                                                <td>
+                                                    <span class="titleTabela"><b>Procedimentos</b></span>
+                                                </td>
+                                                <td
+                                                  class="CarenciaReduzida_TD-Head"
+                                                >
+                                                    <span class="titleTabela __CarenciaReduzida"><b>Carência</b> <span class="titleTabela_MiniObs">(1)</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Urgência e emergência</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">24h</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Consulta</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Radiologia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Proc. Preventivo</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Dentística</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Periodontia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Endodontia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">120 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Prótese</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">180 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Cirurgia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Clareamento com moldeira (Gel + Moldeira) <span class="textTable_Planos">Dental III e Dental Clareamento</span></span>
+                                                </td>
+                                                 <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Clareamento em Consultório <span class="textTable_Planos">Dental IV</span></span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Ortodontia <span class="textTable_Planos">Dental III e Dental IV</span></span>
+                                                </td>
+                                                 <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Ortodontia <span class="textTable_Planos">Dental Ortho e Ortho Plus</span></span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Ortodontia <span class="textTable_Planos">Dental Invisível</span></span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic __Final">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table class="Content_Table_Item" cellpadding="16" cellspacing="0" [border]="0">
+                                <tr class="Table_Item_Head __CarenciaReduzida">
+                                    <td [align]="'center'">
+                                        <span class="Item_Head_Title">PAGAMENTO SEMESTRAL <span class="Head_Title_Observacao">(Boleto, Pix ou Cartão de crédito)</span></span>
+                                        <img src="assets/img/img-carencia-reduzida.png" class="__CarenciaReduzida_Img" alt="Carência Reduzida" title="Carência Reduzida">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellpadding="8" cellspacing="0" [border]="1" bordercolor="#c3c3c3">
+                                            <tr>
+                                                <td>
+                                                    <span class="titleTabela"><b>Procedimentos</b></span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Head">
+                                                    <span class="titleTabela __CarenciaReduzida"><b>Carência</b> <span class="titleTabela_MiniObs">(1)</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Urgência e emergência</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">24h</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Consulta</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Radiologia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Proc. Preventivo</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Dentística</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Periodontia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Endodontia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Prótese</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">150 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">Cirurgia</span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">90 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">
+                                                        Clareamento com moldeira (Gel + Moldeira)
+                                                        <span class="textTable_Planos">Dental III e Dental Clareamento</span>
+                                                    </span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">
+                                                        Clareamento em Consultório
+                                                        <span class="textTable_Planos">Dental IV</span>
+                                                    </span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">60 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">
+                                                        Ortodontia
+                                                        <span class="textTable_Planos">Dental III e Dental IV</span>
+                                                    </span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">
+                                                        Ortodontia
+                                                        <span class="textTable_Planos">Dental Ortho e Ortho Plus</span>
+                                                    </span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="textTable">
+                                                        Ortodontia
+                                                        <span class="textTable_Planos">Dental Invisível</span>
+                                                    </span>
+                                                </td>
+                                                <td class="CarenciaReduzida_TD-Basic __Final">
+                                                    <span class="textTable">30 dias</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="TabelaCarencias_Content_Table CarenciaZeroTodosPlanos">
+                        <div class="TabelaCarencias_Content_HeaderCarenciaZERO">
+                            <span class="Content_HeaderCarenciaZERO_Principal">Carência Zero Total <span class="Content_HeaderCarenciaZERO_MiniObs">(2)</span></span>
+                            <span class="Content_HeaderCarenciaZERO_Observacao">Promoção para os planos anuais</span>
+
+                            <span class="Content_HeaderCarenciaZERO_ObservacaoV2">
+                            <b>Promoção Carência Zero Total</b> para os planos Pessoa Física na modalidade anual, seja no boleto ou no cartão de crédito. <br>
+                            </span>
+                        </div>
+                        <table class="Content_Table_Item" cellpadding="0" cellspacing="0" [border]="0">
+                            <tr>
+                                <td [align]="'center'">
+                                    <table cellpadding="16" cellspacing="0" [border]="0" width="100%">
+                                        <tr>
+                                            <td [align]="'center'">
+                                                <span class="Item_Head_Title">PAGAMENTO ANUAL <span class="Head_Title_Observacao">(Boleto ou cartão de crédito)</span></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="CarenciaTotal" >
+                                    <table cellpadding="8" cellspacing="0" [border]="1" bordercolor="#c3c3c3" style="padding: 16px; border: none; border-color: #c3c3c3;">
+                                        <tr  >
+                                            <td>
+                                                <span class="titleTabela"><b>Procedimentos</b></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01; border-bottom: none;">
+                                                <span class="titleTabelaDestaque"><b>Carência Zero Total</b> <span class="titleTabelaDestaque_MiniOBS">(2)</span></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Urgência e emergência</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Consulta</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Radiologia</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Proc. Preventivo</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Dentística</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Periodontia</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Endodontia</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Prótese</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Cirurgia</span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Clareamento com moldeira (Gel + Moldeira) <span class="textTable_Planos">Dental III e Dental Clareamento</span></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Clareamento em Consultório <span class="textTable_Planos">Dental IV</span></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Ortodontia <span class="textTable_Planos">Dental III e Dental IV</span></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Ortodontia <span class="textTable_Planos">Dental Ortho e Ortho Plus</span></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: none;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="textTable">Ortodontia <span class="textTable_Planos">Dental Invisível</span></span>
+                                            </td>
+                                            <td style="border: 2px solid #ff9f01;border-bottom: 2px solid #ff9f01;border-top: 2px solid #c3c3c3;">
+                                                <span class="textTable">24h</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- <div class="TabelaCarencias_Content_OBS">
+                    <p>
+                        (1) PROMOÇÃO CARENCIA REDUZIDA: Válida para contratação mensal em cartão de crédito e somente a partir da segunda parcela quitada do cartão de crédito. Consulte a tabela de redução de carência disponível no site
+                    </p>
+
+                    <p>(2) PROMOÇÃO CARÊNCIA ZERO TOTAL: válida somente para a contratação anual, em boleto bancário único ou no cartão de crédito. </p>
+
+                    <p>
+                        Vigência do Contrato:  Mínimo 12 meses.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+<!--Invisível-->
+<section class="RedeCredenciadaECarencias" *ngIf="linha.includes('Invisivel')" >
+  <div class="RedeCredenciadaECarencias_TabelaCarencias" id="Carencias">
+    <div class="RedeCredenciadaECarencias_TabelaCarencias_Container">
+
+      <!-- Início das novas Tabelas -->
+      <div class="TabelaCarencias_Container_FixNovasTabelas">
+
+        <!-- Aqui começa as tabelas básicas -->
+
+        <div class="Container_FixNovasTabelas_Basicas">
+
+          <!-- Início Tabela 1 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __Mensal">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento mensal</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Boleto ou Pix)</span>
+              </div>
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Documentação Ortodôntica (Digital)</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Alinhador</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Clareamento com gel (Caseiro)</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS + Coroa Total em Dente Posterior em Cerômero
+                </div>
+                <div class="Tabela_Row_Item">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 1 -->
+
+          <!-- Início Tabela 2 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __CarenciaReduzida __Mensal">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento mensal</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Cartão de crédito)</span>
+              </div>
+              <img src="assets/img/img-carencia-reduzida.png"
+                class="SideTwo_HeaderTabela_LogotipoCarencia" alt="Carência Reduzida" title="Carência Reduzida">
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência <span class="Titulo_Item_MiniObs">(1)</span></div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Documentação Ortodôntica (Digital)</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Alinhador</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Clareamento com gel (Caseiro)</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS + Coroa Total em Dente Posterior em Cerômero
+                </div>
+                <div class="Tabela_Row_Item" style="border-bottom: 2px solid #ffa72d;">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 2 -->
+
+          <!-- Início Tabela 3 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __CarenciaReduzida Semestral">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento semestral</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Boleto, Pix ou Cartão de crédito)</span>
+              </div>
+              <img src="assets/img/img-carencia-reduzida.png"
+                class="SideTwo_HeaderTabela_LogotipoCarencia" alt="Carência Reduzida" title="Carência Reduzida">
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência <span class="Titulo_Item_MiniObs">(1)</span></div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Documentação Ortodôntica (Digital)</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Alinhador</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Clareamento com gel (Caseiro)</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS + Coroa Total em Dente Posterior em Cerômero
+                </div>
+                <div class="Tabela_Row_Item" style="border-bottom: 2px solid #ffa72d;">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 3 -->
+        </div>
+
+        <!-- Aqui terminam as tabelas básicas -->
+
+        <!-- Aqui começa a tabela antiga em outra posicao -->
+
+        <div class="TabelaCarencias_Container_SideTwo">
+          <div class="Container_SideTwo_HeaderTabela">
+            <span class="SideTwo_HeaderTabela_TituloFix">Carência Zero total <span
+                class="SideTwo_HeaderTabela_MiniNumber">(2)</span></span>
+            <!-- <span class="SideTwo_HeaderTabel_Obs">
+                                  Promoção para o plano mensal.
+                              </span> -->
+
+            <div class="SideTwo_HeaderTabel_ObsV2">
+              Promoção Carência Zero Total para os planos Pessoa Física na modalidade anual, seja no boleto ou no
+              cartão de crédito.
+            </div>
+          </div>
+          <div class="Container_SideTwo_Tabela">
+            <div class="SideTwo_Tabela_Titulo">
+              <div class="Tabela_Titulo_Item">
+                Procedimentos
+              </div>
+              <div class="Tabel_Titulo_Item">
+                Carência Contratual
+              </div>
+              <div class="Tabel_Titulo_Item">
+                Carência Zero*
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Urgência e emergência
+              </div>
+              <div class="Tabela_Row_Item">
+                24 Horas
+              </div>
+              <div class="Tabela_Row_Item">
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">
+                Ortodontia
+              </div>
+              <div class="Tabela_Row_Item">
+                30 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 30 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">
+                Documentação Ortodôntica (Digital)
+              </div>
+              <div class="Tabela_Row_Item">
+                30 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 30 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">
+                Manutenção do Alinhador
+              </div>
+              <div class="Tabela_Row_Item">
+                30 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 30 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Consulta
+              </div>
+              <div class="Tabela_Row_Item">
+                30 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 30 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Radiologia
+              </div>
+              <div class="Tabela_Row_Item">
+                30 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 30 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Procedimento preventivo
+              </div>
+              <div class="Tabela_Row_Item">
+                60 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 60 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Dentística
+              </div>
+              <div class="Tabela_Row_Item">
+                90 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 90 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Cirurgia Oral Menor
+              </div>
+              <div class="Tabela_Row_Item">
+                90 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 90 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Clareamento com gel (caseiro)
+              </div>
+              <div class="Tabela_Row_Item">
+                90 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 90 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Periodontia
+              </div>
+              <div class="Tabela_Row_Item">
+                120 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 120 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                Endodontia
+              </div>
+              <div class="Tabela_Row_Item">
+                120 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                <!-- 120 Dias -->
+                24 Horas
+              </div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">
+                **Prótese conforme Rol ANS + Coroa Total em Dente Posterior em Cerômero
+              </div>
+              <div class="Tabela_Row_Item">
+                180 Dias
+              </div>
+              <div class="Tabela_Row_Item">
+                24 Horas
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aqui termina a tabela antiga em outra posicao -->
+
+      </div>
+      <!-- Fim das novas Tabelas -->
+      <!-- <div class="TabelaCarencias_Container_NovasObservacoes">
+        <span class="Container_NovasObservacoes_Item">***De acordo com o produto escolhido.</span>
+        <span class="Container_NovasObservacoes_Item">Vigência do Contrato: Mínimo 12 meses.</span>
+        <span class="Container_NovasObservacoes_Item">(1) PROMOÇÃO CARENCIA REDUZIDA: Válida para contratação mensal
+          em cartão de crédito e somente a partir da segunda parcela quitada do cartão de crédito. Consulte a tabela
+          de redução de carência disponível no site.</span>
+        <span class="Container_NovasObservacoes_Item">(2) PROMOÇÃO CARÊNCIA ZERO TOTAL: válida somente para a
+          contratação anual, em boleto bancário único ou no cartão de crédito.</span>
+      </div> -->
+
+    </div>
+  </div>
+</section>
+<!--Ortho-->
+<section class="RedeCredenciadaECarencias" *ngIf="linha.includes('Ortho')" >
+  <div class="RedeCredenciadaECarencias_TabelaCarencias" id="Carencias">
+    <div class="RedeCredenciadaECarencias_TabelaCarencias_Container">
+
+      <!-- Início das novas Tabelas -->
+
+      <div class="TabelaCarencias_Container_FixNovasTabelas">
+
+        <div class="Container_FixNovasTabelas_Basicas">
+
+          <!-- Início Tabela 1 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __Mensal">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento mensal</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Boleto ou Pix)</span>
+              </div>
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">***Documentação Ortodôntica</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Aparelho</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS</div>
+                <div class="Tabela_Row_Item">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 1 -->
+
+          <!-- Início Tabela 2 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __CarenciaReduzida __Mensal">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento mensal</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Cartão de crédito)</span>
+              </div>
+              <img src="assets/img/img-carencia-reduzida.png" class="SideTwo_HeaderTabela_LogotipoCarencia" alt="Carência Reduzida" title="Carência Reduzida">
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência <span class="Titulo_Item_MiniObs">(1)</span></div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">***Documentação Ortodôntica</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Aparelho</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS</div>
+                <div class="Tabela_Row_Item" style="border-bottom: 2px solid #ffa72d;">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 2 -->
+
+          <!-- Início Tabela 3 -->
+
+          <div class="TabelaCarencias_Container_SideTwo __Basico __CarenciaReduzida Semestral">
+            <div class="Container_SideTwo_HeaderTabela">
+              <div class="SideTwo_HeaderTabela_ContainerFix">
+                <span class="SideTwo_HeaderTabela_Titulo">Pagamento Semestral</span>
+                <span class="SideTwo_HeaderTabela_Subtitulo">(Boleto, Pix ou Cartão de crédito)</span>
+              </div>
+              <img src="assets/img/img-carencia-reduzida.png" class="SideTwo_HeaderTabela_LogotipoCarencia" alt="Carência Reduzida" title="Carência Reduzida">
+            </div>
+            <div class="Container_SideTwo_Tabela">
+              <div class="SideTwo_Tabela_Titulo">
+                <div class="Tabela_Titulo_Item">Procedimentos</div>
+                <div class="Tabel_Titulo_Item">Carência <span class="Titulo_Item_MiniObs">(1)</span></div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Urgência e emergência</div>
+                <div class="Tabela_Row_Item">24 Horas</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Ortodontia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">***Documentação Ortodôntica</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row __is-destaque">
+                <div class="Tabela_Row_Item">Manutenção do Aparelho</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Consulta</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Radiologia</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Procedimento preventivo</div>
+                <div class="Tabela_Row_Item">30 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Dentística</div>
+                <div class="Tabela_Row_Item">60 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Periodontia</div>
+                <div class="Tabela_Row_Item">90 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">Endodontia</div>
+                <div class="Tabela_Row_Item">120 dias</div>
+              </div>
+              <div class="SideTwo_Tabela_Row">
+                <div class="Tabela_Row_Item">**Prótese conforme Rol ANS</div>
+                <div class="Tabela_Row_Item" style="border-bottom: 2px solid #ffa72d;">180 Dias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fim Tabela 3 -->
+
+        </div>
+
+
+
+        <div class="TabelaCarencias_Container_SideTwo">
+          <div class="Container_SideTwo_HeaderTabela">
+            <span class="SideTwo_HeaderTabela_TituloFix">Carência Zero Total <span class="SideTwo_HeaderTabela_MiniNumber">(2)</span></span>
+            <span class="SideTwo_HeaderTabela_Subtitulo">Pagamento anual</span>
+            <div class="SideTwo_HeaderTabel_ObsV2">
+              Promoção Carência Zero Total para os planos Pessoa Física na modalidade anual, seja no boleto ou no cartão de crédito.
+            </div>
+          </div>
+          <div class="Container_SideTwo_Tabela">
+            <div class="SideTwo_Tabela_Titulo">
+              <div class="Tabela_Titulo_Item">Procedimentos</div>
+              <div class="Tabel_Titulo_Item">Carência Contratual</div>
+              <div class="Tabel_Titulo_Item">Carência Zero Total</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Urgência e emergência</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">Ortodontia</div>
+              <div class="Tabela_Row_Item">30 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">***Documentação Ortodôntica</div>
+              <div class="Tabela_Row_Item">30 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row __is-destaque">
+              <div class="Tabela_Row_Item">Manutenção do Aparelho</div>
+              <div class="Tabela_Row_Item">30 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Consulta</div>
+              <div class="Tabela_Row_Item">30 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Radiologia</div>
+              <div class="Tabela_Row_Item">30 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Procedimento preventivo</div>
+              <div class="Tabela_Row_Item">60 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Dentística</div>
+              <div class="Tabela_Row_Item">90 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Cirurgia Oral Menor</div>
+              <div class="Tabela_Row_Item">90 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Periodontia</div>
+              <div class="Tabela_Row_Item">120 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">Endodontia</div>
+              <div class="Tabela_Row_Item">120 Dias</div>
+              <div class="Tabela_Row_Item">24 Horas</div>
+            </div>
+            <div class="SideTwo_Tabela_Row">
+              <div class="Tabela_Row_Item">**Prótese conforme Rol ANS</div>
+              <div class="Tabela_Row_Item">180 horas</div>
+              <div class="Tabela_Row_Item" style="border-bottom: 2px solid #ffa72d;">24 Horas</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Fim das novas Tabelas -->
+      <!-- <div class="TabelaCarencias_Container_NovasObservacoes">
+          <span class="Container_NovasObservacoes_Item">***De acordo com o produto escolhido.</span>
+          <span class="Container_NovasObservacoes_Item">Vigência do Contrato: Mínimo 12 meses.</span>
+          <span class="Container_NovasObservacoes_Item">(1) PROMOÇÃO CARENCIA REDUZIDA: Válida para contratação mensal em cartão de crédito e somente a partir da segunda parcela quitada do cartão de crédito. Consulte a tabela de redução de carência disponível no site.</span>
+          <span class="Container_NovasObservacoes_Item">(2) PROMOÇÃO CARÊNCIA ZERO TOTAL: válida somente para a contratação anual, em boleto bancário único ou no cartão de crédito.</span>
+      </div> -->
+    </div>
+  </div>
+</section>

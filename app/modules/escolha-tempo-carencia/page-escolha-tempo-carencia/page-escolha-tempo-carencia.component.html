@@ -1,0 +1,99 @@
+<div class="ContentPageVenda_Container">
+  <app-block-resumo-vida-valor *ngIf="isVisaoCorretor()"></app-block-resumo-vida-valor>
+  <div class="BannerSuperior" *ngIf="!isVisaoCorretor()">
+    <!-- <img src="{{custom.sistema.banners.superior}}?t={{time}}" alt="Banner Superior" alt="Banner" class="BannerSuperior_Item"> -->
+  
+    <picture>
+      <ng-container *ngFor="let image of images; let i = index">
+        <source [srcset]="images[i]" [media]="sizeImages[i]" />
+      </ng-container>
+      <img [src]="images[0]" loading="lazy" alt="Banner" class="BannerSuperior_Item" />
+    </picture>
+  </div>
+
+  <app-title-underline [title]="titulo"></app-title-underline>
+
+  <div class="ApresentacaoTexto" *ngIf="!isVisaoCorretor()">
+    <div class="ApresentacaoTexto_Container">
+      <div class="ApresentacaoTexto_Container_Titulo">
+        Olá, {{proposta?.nomeContratante}}
+      </div>
+      <div class="ApresentacaoTexto_Container_Texto">
+        Selecione abaixo o tempo de carência desejada e clique no botão “Avançar” para prosseguir com o pagamento e
+        concluir seu pedido <b>#{{proposta?.numeroProposta}}</b>, no valor de <b>{{ getValorProposta() | currency }}</b> referente a contratação do plano
+        odontológico da MaisDental.com para 1 pessoa e {{proposta? proposta.totalSegurados - 1 : 0}} dependentes.
+      </div>
+    </div>
+  </div>
+
+  <div class="BannerSuperior" *ngIf="isVisaoCorretor()">
+    <!-- <img src="{{custom.sistema.banners.superior}}?t={{time}}" alt="Banner Superior" alt="Banner" class="BannerSuperior_Item"> -->
+
+    <picture>
+      <ng-container *ngFor="let image of images; let i = index">
+        <source [srcset]="images[i]" [media]="sizeImages[i]" />
+      </ng-container>
+      <img
+        [src]="images[0]"
+        loading="lazy"
+        alt="Banner"
+        class="BannerSuperior_Item"
+      />
+    </picture>
+  </div>
+
+  <div class="Container_SendEmail" *ngIf="btnEnviarLinkHabilitado">
+    <app-button-send-link></app-button-send-link>
+  </div>
+
+  <app-block-cards-planos
+    (setCicloPagamentoEmitter)="setCicloPagamento($event)"
+  ></app-block-cards-planos>
+
+  <!-- Tabela de Carencia -->
+  <app-block-tabela-carencias
+    class="Bloco_Tabela_Carencia"
+  ></app-block-tabela-carencias>
+
+  <div class="RecaptchaLinha">
+    <!-- <app-recaptcha
+      (setRecapthaCheckedEmitter)="setRecaptchaChecked($event)"
+    ></app-recaptcha> -->
+    <div class="AlertaBasic __Medio __AlertaConcluirPedido" *ngIf="!isVisaoCorretor()">
+      <div class="AlertaBasic_Icone">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </div>
+      <div class="AlertaBasic_Texto">
+        A Mais Dental.com não possui cobradores individuais e nem autoriza cobranças em domicilio por
+        terceiros.
+      </div>
+    </div>
+    <app-dialog-pdf *ngIf="!isVisaoCorretor()"></app-dialog-pdf>
+    
+  </div> 
+
+
+  <app-button-navigate
+    (onClickEmitter)="FormValido()"
+    [buttonText]="'Avançar'"
+
+  >
+  </app-button-navigate>
+
+  <app-page-button-back-page *ngIf="isVisaoCorretor()" (onClickEmitter)="backHandler()"></app-page-button-back-page>
+
+  <div class="Steps">
+    <div class="Steps_Container">
+      <div class="Steps_Container_Dots">
+        <div class="Container_Dots_Item"></div>
+        <div class="Container_Dots_Item"></div>
+        <div class="Container_Dots_Item"></div>
+        <div class="Container_Dots_Item"></div>
+        <div class="Container_Dots_Item"></div>
+        <div class="Container_Dots_Item __is-active"></div>
+        <div class="Container_Dots_Item"></div>
+      </div>
+      <div class="Steps_Container_Text">Passo <b>6</b> de <b>7</b></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="loading-screen-wrapper"*ngIf="!(message | async); else loadingMessage"  >
+  <div class="loading-screen-icon">
+    <div class="loading lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+<ng-template #loadingMessage >
+  <div class="loading-screen-wrapper">
+    <div class="MD-PgCartao-EmAndamento __is-active">
+      <div class="MD-PgCartao-EmAndamento_Container">
+        <h1 class="MD-PgCartao-EmAndamento_Container_Titulo" >
+          <b class="Container_Titulo_Destaque">{{ message | async }}</b>
+          e pode levar alguns minutos para ser {{ (message | async )?.includes('reativada') ? 'concluída' : 'concluído'  }}.
+        </h1>
+        <h2 class="MD-PgCartao-EmAndamento_Container_Subtitulo">
+          Por gentileza, não feche nem atualize esta página até a finalização do processo.
+        </h2>
+        <span class="MD-PgCartao-EmAndamento_Container_TextoBasico">Por favor, aguarde a confirmação.</span>
+
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>

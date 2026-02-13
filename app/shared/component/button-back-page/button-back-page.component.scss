@@ -1,0 +1,25 @@
+@use "../../../../scss/_variables.scss";
+
+.ButtonVoltar{
+  text-decoration: none;
+  margin-top: 0!important;
+  font-family: 'Open sans', sans-serif;
+  background-color: inherit;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b2b2b2;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 150ms linear;
+  color: var(--Color-MD2);
+  &:hover{
+    color: var(--Color-MD1);
+  }
+}

@@ -1,0 +1,49 @@
+<div class="LateralResumoDaCompra">
+  <div class="LateralResumoDaCompra_Content">
+    <div class="LateralResumoDaCompra_Content_Titulo">Resumo da compra:</div>
+    <div class="LateralResumoDaCompra_Content_Principal">
+      <div class="Content_Principal_Item">
+        <div class="Principal_Item_Titulo">Plano</div>
+        <div class="Principal_Item_DetalheTexto">
+          Plano {{ proposta?.nomePlano }}
+        </div>
+      </div>
+      <div class="Content_Principal_Item">
+        <div class="Principal_Item_Titulo">Carência</div>
+        <div class="Principal_Item_DetalheTexto">
+          {{ getCicloPagamentoTexto() }}
+          <button
+            (click)="trocarCarencia()"
+            class="Item_DetalheTexto_Btn"
+            [class.__hidden]="trocaCarenciaIsHidden()"
+          >
+            Trocar carência
+          </button>
+        </div>
+      </div>
+
+      <div class="Content_Principal_Item __DestaqueFinal">
+        <div class="Principal_Item_Titulo">Valor/mês</div>
+        <div class="Principal_Item_Preco">
+          {{ getValorProposta() | currency }}
+        </div>
+      </div>
+
+      <div class="Content_Principal_Item __Isencao" *ngIf="isCartao()">
+        <div class="Principal_Item_TituloMenor">Taxa da plataforma on-line</div>
+        <div class="Principal_Item_Isencao">Isento</div>
+      </div>
+
+      <app-card-resumo-valor
+        [formaPagamento]="formaPagamento"
+        [carenciaSelecionada]="getCarenciaSelecionada()"
+        [valorTaxa]="isCartao() ? 0 : taxa?.valor"
+        [produtoValor]="proposta?.produtoValor"
+        [totalSegurados]="proposta?.totalSegurados"
+        [cicloPagamento]="cicloPagamento"
+        [listaDescontos]="getListaDescontos()"
+        *ngIf="formaPagamento"
+      ></app-card-resumo-valor>
+    </div>
+  </div>
+</div>

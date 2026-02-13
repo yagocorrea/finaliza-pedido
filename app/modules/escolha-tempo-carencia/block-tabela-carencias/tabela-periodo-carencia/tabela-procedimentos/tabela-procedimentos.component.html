@@ -1,0 +1,12 @@
+<table class="TabelaProcedimento">
+  <tbody>
+    <tr *ngFor="let procedimento of procedimentos">
+      <td>
+        <span class="TabelaProcedimentoItem" [class.TabelaProcedimentoItem_Destaque]="procedimento.destaque">{{ procedimento.nome }}</span>
+      </td>
+      <td>
+        <span class="TabelaProcedimentoItem" [class.TabelaProcedimentoItem_Destaque]="procedimento.destaque">{{ procedimento.carencia }}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

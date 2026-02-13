@@ -1,0 +1,166 @@
+@use "../../../../scss/_variables.scss";
+app-page-escolha-tempo-carencia {
+  width: 100% !important;
+}
+
+p.corPrimaria {
+  color: var(--cor-primaria);
+}
+
+.ButtonAvancar {
+  text-decoration: none;
+  background-color: var(--Color-MD2);
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Color-MD3);
+  display: flex;
+  flex-direction: row;
+  grid-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 150ms linear;
+  padding: 12px 24px;
+  margin: 0 0 40px;
+  &:hover {
+    background-color: #366dff;
+  }
+}
+
+.disabled-class {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #b5b0b2;
+}
+.Container_SendEmail {
+  max-width: 400px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.Bloco_Tabela_Carencia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ApresentacaoTexto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+
+  .ApresentacaoTexto_Container {
+    width: 790px;
+    max-width: 90%;
+
+    .ApresentacaoTexto_Container_Titulo {
+      color: var(--Color-MD2);
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+
+    .ApresentacaoTexto_Container_Texto {
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--Color-MD4);
+    }
+  }
+}
+
+.AlertaBasic {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 16px;
+  border: 1px solid var(--Color-MD1);
+  padding: 12px;
+
+  .AlertaBasic_Icone {
+    font-size: 32px;
+    color: var(--Color-MD1);
+  }
+
+  .AlertaBasic_Texto {
+    color: var(--Color-MD4);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &.__ExtraGrande {
+    width: calc(90% - 24px);
+    max-width: calc(90% - 24px);
+  }
+
+  &.__Grande {
+    width: calc(90% - 24px);
+    max-width: calc(1024px - 24px);
+  }
+
+  &.__Medio {
+    width: calc(90% - 24px);
+    max-width: calc(640px - 24px);
+  }
+
+  &.__Pequeno {
+    width: calc(90% - 24px);
+    max-width: calc(480px - 24px);
+  }
+
+  &.__MuitoPequeno {
+    width: calc(90% - 24px);
+    max-width: calc(320px - 24px);
+  }
+}
+
+.__AlertaConcluirPedido {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 840px) {
+  .ApresentacaoTexto {
+    .ApresentacaoTexto_Container {
+      .ApresentacaoTexto_Container_Titulo {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      .ApresentacaoTexto_Container_Texto {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+@keyframes animaAlertaTotal {
+  0% {
+    transform: scale(1.0);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+
+.PopupAnimado {
+  animation: animaAlertaTotal 1s linear 0s infinite normal forwards;
+  .notyf__ripple {
+    background: var(--Color-MD2) !important;
+  }
+  &.notyf__toast--disappear {
+    animation: notyf-fadeoutdown 0.3s forwards;
+    animation-delay: 0.25s;
+  }
+}

@@ -1,0 +1,62 @@
+<ng-container *ngIf="aptaCancelamento; else propostaCancelada" >
+  <div class="ApresentacaoTexto">
+    <div class="ApresentacaoTexto_Container">
+      <div class="ApresentacaoTexto_Container_Titulo">
+        Olá, {{ corretor?.nome }}
+      </div>
+      <div class="ApresentacaoTexto_Container_Texto">
+        Confira abaixo os detalhes da proposta e decida se deseja prosseguir com o cancelamento.
+      </div>
+    </div>
+  </div>
+
+  <div class="DetalhesProposta">
+    <div class="DetalhesProposta_Container">
+      <div class="DetalhesProposta_Container_Item">
+        <div class="DetalhesProposta_Container_Item_Titulo">Número</div>
+        <div class="DetalhesProposta_Container_Item_Texto"> #{{ proposta?.numeroProposta }} </div>
+      </div>
+      <div class="DetalhesProposta_Container_Item">
+        <div class="DetalhesProposta_Container_Item_Titulo">Titular</div>
+        <div class="DetalhesProposta_Container_Item_Texto"> {{ proposta?.nomeContratante }} </div>
+      </div>
+      <div class="DetalhesProposta_Container_Item">
+        <div class="DetalhesProposta_Container_Item_Titulo">Valor</div>
+        <div class="DetalhesProposta_Container_Item_Texto"> {{ proposta?.valor | currency }} </div>
+      </div>
+      <div class="DetalhesProposta_Container_Item">
+        <div class="DetalhesProposta_Container_Item_Titulo">Vigência</div>
+        <div class="DetalhesProposta_Container_Item_Texto"> {{ proposta?.dataVigencia | date: 'dd/MM/yyyy' }} </div>
+      </div>
+      <div class="DetalhesProposta_Container_Item">
+        <div class="DetalhesProposta_Container_Item_Titulo">Plano</div>
+        <div class="DetalhesProposta_Container_Item_Texto"> {{ proposta?.nomePlano }} </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="AreaCancelamento">
+    <div class="AreaCancelamento_Form">
+      <div class="AreaCancelamento_Form_Check">
+        <input type="checkbox" [formControl]="checkboxAceite">
+      </div>
+      <div class="AreaCancelamento_Form_Text">
+        Concordo que a proposta seja cancelada em sistema.
+        Esse procedimento não pode ser revertido. Caso deseje, uma nova proposta precisará ser realizada.
+      </div>
+    </div>
+    <div class="AreaCancelamento_Button">
+      <div
+        (click)="checkboxAceite.value && handleCancelarProposta()"
+        class="ButtonCancelar"
+        [ngClass]="{'__is-disabled': !checkboxAceite.value}"
+      >
+        Cancelar proposta
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #propostaCancelada >
+
+</ng-template>

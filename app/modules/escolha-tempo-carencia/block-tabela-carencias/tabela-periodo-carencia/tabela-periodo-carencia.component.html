@@ -1,0 +1,21 @@
+<div class="ContentTabelaPeriodoCarencia">
+  <table 
+    class="TabelaPeriodoCarencia"
+    *ngFor="let periodoPagamento of carencias"
+  >
+    <tbody>
+      <tr>
+        <td [class.__TitleDestacado]="periodoPagamento.destaque">
+          <span class="TabelaPeriodoCarenciaTitulo">
+            {{ periodoPagamento.periodo }}
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td [class.CarenciaDestaque]="periodoPagamento.destaque">
+          <app-tabela-procedimentos [procedimentos]="periodoPagamento.procedimentos" [destaque]="periodoPagamento.destaque"></app-tabela-procedimentos>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,70 @@
+<div class="CardsFormasDePagamento">
+  <div class="CardsFormasDePagamento_Container">
+    <div
+      class="CardsFormasDePagamento_Container_Item"
+      [class.__promo]="percentualEscolhido.pix"
+      [class.__is-active]="isPix()"
+      (click)="setFormaPagamentoPix()"
+    >
+      <div class="Container_Item_BadgeBounce" *ngIf="percentualEscolhido.pix">
+        <span class="BadgeBounce_Destaque_TextoBasico">Desconto de</span>
+        <span class="Item_BadgeBounce_Destaque __Piscando"
+          >{{ percentualEscolhido.pix }}% no PIX</span
+        >
+      </div>
+      <div class="Container_Item_Head">
+        <div class="Item_Head_Icone">
+          <i class="fa-brands fa-pix"></i>
+        </div>
+        <div class="Item_Head_Titulo">Pix</div>
+      </div>
+    </div>
+
+    <div
+      class="CardsFormasDePagamento_Container_Item"
+      [class.__promo]="percentualEscolhido.cartao"
+      [class.__is-active]="isCartao()"
+      (click)="setFormaPagamentoCartao()"
+    >
+      <div
+        class="Container_Item_BadgeBounce"
+        *ngIf="percentualEscolhido.cartao"
+      >
+        <span class="BadgeBounce_Destaque_TextoBasico">Desconto de</span>
+        <span class="Item_BadgeBounce_Destaque __Piscando"
+          >{{ percentualEscolhido.cartao }}% no Cartão</span
+        >
+        <!-- <span class="BadgeBounce_Destaque_TextoLegal">*Referente a isenção de cobrança da taxa da plataforma.</span> -->
+      </div>
+      <div class="Container_Item_Head">
+        <div class="Item_Head_Icone">
+          <i class="fa-solid fa-credit-card"></i>
+        </div>
+        <div class="Item_Head_Titulo">Cartão de crédito</div>
+      </div>
+    </div>
+
+    <div
+      class="CardsFormasDePagamento_Container_Item"
+      [class.__promo]="percentualEscolhido.boleto"
+      [class.__is-active]="isBoleto()"
+      (click)="setFormaPagamentoBoleto()"
+    >
+      <div
+        class="Container_Item_BadgeBounce"
+        *ngIf="percentualEscolhido.boleto"
+      >
+        <span class="BadgeBounce_Destaque_TextoBasico">Desconto de</span>
+        <span class="Item_BadgeBounce_Destaque __Piscando"
+          >{{ percentualEscolhido.boleto }}% no Boleto</span
+        >
+      </div>
+      <div class="Container_Item_Head">
+        <div class="Item_Head_Icone">
+          <i class="fa-solid fa-barcode"></i>
+        </div>
+        <div class="Item_Head_Titulo">Boleto Online</div>
+      </div>
+    </div>
+  </div>
+</div>

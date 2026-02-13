@@ -1,0 +1,39 @@
+
+@use "../../../../scss/_variables.scss";
+
+.CancelamentoIndisponivel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  width: 790px;
+  max-width: 90%;
+  margin: auto;
+
+  i {
+    font-size: 48px;
+    color: #eaa300;;
+  }
+
+  .CancelamentoIndisponivel_Text {
+    font-size: 24px;
+    color: var(var(--Color-MD4));
+    text-align: center;
+
+    a {
+      color: var(--Color-MD2);
+    }
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: 90%;
+
+    .CancelamentoIndisponivel_Text {
+      font-size: 18px;
+
+    }
+
+  }
+}

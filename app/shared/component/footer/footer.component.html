@@ -1,0 +1,35 @@
+<div class="SO_CorretorBar" *ngIf="corretor">
+    <div class="SO_CorretorBar_Item">Página de venda do Corretor: <span *ngIf="corretor.nome">{{ corretor.nome }}</span></div>
+    <div class="SO_CorretorBar_Item">Código: <span  *ngIf="corretor.cpf">{{ corretor.cpf | slice: 0 : 5 }}</span></div>
+    <div class="SO_CorretorBar_Item">NOME COMERCIAL: <span *ngIf="corretor.nomeGuerra">{{ corretor.nomeGuerra }}</span></div>
+    <div class="SO_CorretorBar_Item">TABELA DE PREÇO: <span *ngIf="proposta && proposta.uf">{{ proposta.uf }}</span></div>
+</div>
+
+
+<div class="SO_Footer">
+    <div class="SO_Footer_ANS">
+        <div class="SO_Footer_MaisDental"><img src="{{custom.sistema.imgANS.src}}"></div>
+        <div class="SO_Footer_Epao"><img src="{{custom.sistema.imgEPAO.src}}"></div>
+    </div>
+    <div class="SO_Footer_Nome"><span class="TxtAzulEscuro">MaisDental.com</span> - Projeto Odontológico Familiar</div>
+
+    <div class="SO_Footer_Telefones" *ngIf="corretor">
+
+        <div class="SO_Footer_Telefones_Item TxtAzulClaro" *ngIf="corretor.telefone">
+            {{ corretor.telefone | phoneFormat }}</div>
+
+        <div class="SO_Footer_Telefones_Item TxtAzulClaro" *ngIf="corretor.whatsApp">
+            {{ corretor.whatsApp | phoneFormat }}</div>
+    </div>
+    <div class="SO_Footer_Site"></div>
+    <div class="SO_Footer_Copy ng-binding">© eNOSS Plataforma de Vendas Online - {{ currentYear }}</div>
+
+    <div class="SaudeAtende_Landing_FooterMarlin">
+        <div class="Landing_FooterMarlin_Final">
+            <div class="FooterMarlin_Final_LogoMarlin"><span>Um produto</span> <a href="https://marlin.com.br/?utm_source=maisdental&utm_medium=pagina_venda&utm_campaign=footer_maisdendal_pagina_venda"
+                    target="_blank"><img src="assets/img/logo-footer-marlin.png"></a></div>
+            <div class="FooterMarlin_Final_Text"><span>Praticidade e segurança para a sua venda</span> <a
+                    href="https://hcommerce.com.br/?utm_source=maisdental&utm_medium=pagina_venda&utm_campaign=footer_maisdendal_pagina_venda" target="_blank">Health Commerce • Venda Online</a></div>
+        </div>
+    </div>
+</div>

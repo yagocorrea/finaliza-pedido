@@ -1,0 +1,6 @@
+<app-header></app-header>
+<div class="ContentPageVenda">
+  <router-outlet></router-outlet>
+</div>
+<app-footer [proposta]="proposta" [corretor]="corretor"></app-footer>
+<app-loading *ngIf="loadingService.isLoading | async"></app-loading>

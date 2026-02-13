@@ -1,0 +1,98 @@
+<div
+  class="SO_PaginaVenda_Slide SO_PaginaVenda_Slide_Login_Corretor {{ animateformPai }} animated __is-active"
+>
+  <div class="SO_PaginaVenda_Slide_Content">
+
+    <!-- TÍTULO -->
+    <div
+      class="SO_PaginaVenda_Slide_Login_Corretor_Titulo"
+      *ngIf="!carregando"
+    >
+      <span class="__is-destaque-min">Área do corretor</span>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div
+      class="SO_PaginaVenda_Slide_Login_Corretor_content"
+      *ngIf="!carregando"
+    >
+
+      <!-- FORMULÁRIO -->
+      <form
+        #formCorretor="ngForm"
+        (ngSubmit)="buscarCorretor()"
+        class="SO_PaginaVenda_Slide_Login_Corretor_content_login"
+      >
+
+        <div class="SO_PaginaVenda_Slide_Login_Corretor_content_login_title">
+          <i class="fa fa-user"></i>
+          <span>Já é um corretor cadastrado?</span>
+        </div>
+
+        <div class="SO_PaginaVenda_Slide_Login_Corretor_content_login_body">
+          <div class="SO_PaginaVenda_Slide_FormContent">
+
+            <div class="SO_Slide_FormGroup">
+              <div class="SO_Slide_FormGroup_Label">
+                Informe o seu CPF:
+              </div>
+
+              <div
+                class="SO_Slide_FormGroup_Input"
+                [ngClass]="{
+                  '__is-erro': formCorretor.submitted && !corretor.cpf
+                }"
+              >
+                <input
+                  type="tel"
+                  name="cpf"
+                  [(ngModel)]="corretor.cpf"
+                  placeholder="Insira aqui o CPF do corretor."
+                  required
+                />
+              </div>
+
+              <!-- Mensagens de erro (simples, sem diretivas antigas) -->
+              <div
+                class="SO_Slide_FormErro"
+                *ngIf="paginaCorretor.notFound"
+              >
+                Corretor não encontrado.
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="SO_PaginaVenda_Slide_Login_Corretor_content_login_footer">
+          <button class="btn btn-success center-block" type="submit">
+            BUSCAR
+          </button>
+        </div>
+      </form>
+
+      <!-- CADASTRO -->
+      <div class="SO_PaginaVenda_Slide_Login_Corretor_content_lead">
+        <div class="SO_PaginaVenda_Slide_Login_Corretor_content_lead_title">
+          <i class="fa fa-user-plus"></i>
+          <span>Ainda não se cadastrou?</span>
+          <span>
+            Clique no botão abaixo para realizar seu cadastro como corretor:
+          </span>
+        </div>
+
+        <div
+          class="SO_PaginaVenda_Slide_Login_Corretor_content_lead_footer"
+          (click)="irCadastroCorretor()"
+        >
+          <div>CADASTRAR</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LOADING -->
+    <!-- <loading *ngIf="carregando"></loading> -->
+
+  </div>
+</div>

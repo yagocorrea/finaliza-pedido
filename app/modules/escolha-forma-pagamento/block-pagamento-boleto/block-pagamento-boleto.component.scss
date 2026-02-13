@@ -1,0 +1,88 @@
+@use "../../../../scss/_variables.scss";
+
+.Container_ContentPrincipal_Row{
+  margin-top: 48px;
+  &.__DuasColunas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  &.__DuasColunasCustomCartaoDeCredito{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+  }
+}
+
+.BannerMioloQuadrado{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .BannerMioloQuadrado_Item{
+      max-width: 100%;
+  }
+}
+
+.GerarPagamentoBoleto{
+  border: solid 1px #e6e6e6;
+  padding: 16px;
+  .GerarPagamentoBoleto_Content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 24px;
+      .GerarPagamentoBoleto_Content_Icone{
+          i{
+              font-size: 48px;
+              color: var(--Color-MD1);
+          }
+      }
+      .GerarPagamentoBoleto_Content_Titulo{
+          color: var(--Color-MD4);
+          font-size: 20px;
+          line-height: 28px;
+          font-weight: 400;
+          text-align: center;
+      }
+      .GerarPagamentoBoleto_Content_Button{
+          width: 100%;
+          .Content_Button_Item{
+              border: none;
+              background-color: #B5B0B2;
+              color: var(--Color-MD3);
+              width: 100%;
+              padding: 12px 20px;
+              font-size: 18px;
+              font-weight: 700;
+              cursor: pointer;
+              transition: 150ms linear;
+              &.__is-active{
+                  background-color: var(--Color-MD2);
+                  &:hover{
+                      background-color: var(--Color-MD1);
+                  }
+              }
+          }
+      }
+      .GerarPagamentoBoleto_Content_Recaptcha{
+          img{
+              max-width: 100%;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .Container_ContentPrincipal_Row{
+    &.__DuasColunas{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &.__DuasColunasCustomCartaoDeCredito{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}

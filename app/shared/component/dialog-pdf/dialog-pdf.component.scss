@@ -1,0 +1,94 @@
+@use "../../../../scss/_variables.scss";
+
+.Dialog {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  border: 0.5px solid var(--Color-MD4);
+
+  &:-internal-dialog-in-top-layer::backdrop {
+    background: rgba($color: #000000, $alpha: 0.6);
+  }
+  
+  .Dialog_Container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .pdfViewer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .pdfContainer {
+        width: 100%;
+        height: 100%;
+      }
+
+    .Dialog_Linha {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+    }
+  }
+}
+
+.Margin0 {
+  margin: 0px !important;
+}
+
+.TermoDeAceite {
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 0px 10px;
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #515151;
+
+    a {
+      text-decoration: underline;
+      color: inherit;
+      transition: 150ms linear;
+      cursor: pointer;
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+
+}
+
+.ButtonClose {
+  text-decoration: none;
+  background-color: var(--Color-MD2);
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Color-MD3);
+  display: flex;
+  flex-direction: row;
+  grid-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 150ms linear;
+  padding: 12px 24px;
+  margin: 0 auto 40px;
+
+  &:hover {
+    background-color: var(--Color-MD1);
+  }
+}

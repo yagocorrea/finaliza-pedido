@@ -1,0 +1,124 @@
+@use "../../../../../scss/_variables.scss";
+
+.ContentTabelaPeriodoCarencia {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 16px;
+  .TabelaPeriodoCarencia {
+    border: 0px;
+    border-spacing: 0px;
+    width: 100%;
+
+    tbody {
+      tr:nth-child(odd) {
+        background-color: var(--var(--Color-Table-Line2));
+      }
+    
+      tr:nth-child(even) {
+        background-color: var(--Color-Table-Line1);
+      }
+
+      td {
+        padding: 16px;
+        text-align: center;
+      }
+    }
+
+    .TabelaPeriodoCarenciaTitulo {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: var(--Color-Text-Table);
+    }
+
+
+
+    .__TitleDestacado {
+      background-color: var(--Color-Destaque-Table);
+      border-radius: 16px 16px 0px 0px;
+      position: relative;
+
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        width: 64px;
+        height: 64px;
+        background-image: url(../../../../../assets/img/carenciazero-newbadge.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .TabelaPeriodoCarenciaTitulo {
+        color: #fff;
+      }
+    }
+
+    .TableHasDestaque {
+      tr {
+        &:first-child {
+          td {
+            &:nth-child(2) {
+              border-top: 2px solid var(--Color-Destaque-Table);
+            }
+          }
+        }
+
+        &:last-child {
+          td {
+            &:nth-child(2) {
+              border-bottom: 2px solid var(--Color-Destaque-Table);
+            }
+          }
+        }
+
+        td {
+          &:nth-child(2) {
+            border-left: 2px solid var(--Color-Destaque-Table);
+            border-right: 2px solid var(--Color-Destaque-Table);
+          }
+        }
+      }
+    }
+  }
+}
+
+.CarenciaDestaque {
+  border: 4px solid var(--Color-Destaque-Table) !important;
+}
+
+@media screen and (max-width: 1260px) {
+  .ContentTabelaPeriodoCarencia {
+      grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  .ContentTabelaPeriodoCarencia {
+      .TabelaPeriodoCarencia {
+        width: 100%;
+      }
+    }
+}
+
+@media screen and (max-width: 960px) {
+  .ContentTabelaPeriodoCarencia {
+    display: flex;
+    flex-direction: column;
+    .TabelaPeriodoCarencia {
+        &:nth-child(3) {
+          order: 1;
+        }
+    
+        &:nth-child(1) {
+          order: 2;
+        }
+    
+        &:nth-child(2) {
+          order: 3;
+        }
+      }
+  }
+}

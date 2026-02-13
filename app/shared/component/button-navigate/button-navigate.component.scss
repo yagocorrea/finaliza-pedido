@@ -1,0 +1,33 @@
+@use "../../../../scss/_variables.scss";
+
+p.corPrimaria {
+    color: var(--cor-primaria);
+}
+
+.ButtonAvancar {
+  text-decoration: none;
+  background-color: var(--Color-MD2);
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Color-MD3);
+  display: flex;
+  flex-direction: row;
+  grid-gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 150ms linear;
+  padding: 12px 24px;
+  margin: 0 auto 40px;
+  &:hover{
+    background-color: var(--Color-MD1);
+  }
+}
+
+.disabled-class {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #B5B0B2;
+}

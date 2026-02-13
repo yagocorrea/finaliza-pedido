@@ -1,0 +1,227 @@
+@use "../../../../scss/_variables.scss"; 
+
+.SO_CorretorBar {
+    display: flex;
+    padding: 16px;
+    background: var(--Color-MD1);
+    text-align: center;
+    justify-content: center;
+    align-items: center
+}
+
+.SO_CorretorBar .SO_CorretorBar_Item {
+    color: #fff;
+    font-family: "Open Sans",Hind,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase
+}
+
+.SO_CorretorBar .SO_CorretorBar_Item:nth-child(2),.SO_CorretorBar .SO_CorretorBar_Item:nth-child(3),.SO_CorretorBar .SO_CorretorBar_Item:nth-child(4) {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid #fff
+}
+
+.SO_CorretorBar .SO_CorretorBar_Item span {
+    font-weight: 700
+}
+
+
+
+
+
+.SO_Footer {
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.SO_Footer .TxtAzulClaro {
+    color: var(--Color-MD1)!important;
+    font-weight: 700!important
+}
+
+.SO_Footer .TxtAzulEscuro {
+    color: var(--Color-MD1)!important;
+    font-weight: 700!important
+}
+
+.SO_Footer .SO_Footer_ANS {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.SO_Footer .SO_Footer_ANS .SO_Footer_MaisDental {
+    width: 150px;
+    height: 33px;
+    // background: url(https://maisdental.com/hmg/venda/assets/img/NorteaSul/Odonto/ANS_maisDental.jpg) top center no-repeat;
+    // background-size: cover;
+    // margin: 0 auto;
+    // margin-bottom: 10px
+    img{
+        width: 150px;
+        height: 33px;
+    }
+}
+
+.SO_Footer .SO_Footer_ANS .SO_Footer_Epao {
+    width: 150px;
+    height: 33px;
+    // background: url(https://maisdental.com/hmg/venda/assets/img/NorteaSul/Odonto/EPAO_maisDental.jpg) top center no-repeat;
+    // background-size: cover;
+    // margin: 0 auto
+    img{
+        width: 150px;
+        height: 33px;
+    }
+}
+
+.SO_Footer .SO_Footer_Nome {
+    color: #666;
+    font-family: Hind,"Open Sans",sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+    margin-top: 16px
+}
+
+.SO_Footer .SO_Footer_Telefones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px
+}
+
+.SO_Footer .SO_Footer_Telefones .SO_Footer_Telefones_Item {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #999;
+    color: #666;
+    font-family: Hind,"Open Sans",sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px
+}
+
+.SO_Footer .SO_Footer_Telefones .SO_Footer_Telefones_Item:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0
+}
+
+.SO_Footer .SO_Footer_Site {
+    margin-top: 8px;
+    color: #666;
+    font-family: Hind,"Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center
+}
+
+.SO_Footer .SO_Footer_Copy {
+    margin-top: 16px;
+    color: #666;
+    font-family: Hind,"Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center
+}
+
+.SO_Footer .SO_Footer_Desenvolvimento {
+    margin-top: 32px;
+    color: #666;
+    font-family: Hind,"Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center
+}
+
+.SO_Footer .SO_Footer_Desenvolvimento b {
+    font-weight: 700
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin {
+    background-image: url(https://maisdental.com/hmg/venda/assets/img/saude-atende/rodape-bg.png);
+    background-size: cover
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Copyright {
+    text-align: center;
+    padding: 8px
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin {
+    display: flex;
+    border-right: 1px solid #d6d6d6;
+    flex-direction: column;
+    padding: 16px;
+    margin-right: 16px;
+    align-items: center;
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin span {
+    display: block
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin img {
+    width: 60px
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin a:link {
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin a:visited {
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin a:hover {
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_LogoMarlin a:active {
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_Text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_Text a:link {
+    color: #676a6c;
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_Text a:visited {
+    color: #676a6c;
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_Text a:hover {
+    color: #676a6c;
+    text-decoration: none
+}
+
+.SO_Footer .SaudeAtende_Landing_FooterMarlin .Landing_FooterMarlin_Final .FooterMarlin_Final_Text a:active {
+    color: #676a6c;
+    text-decoration: none
+}

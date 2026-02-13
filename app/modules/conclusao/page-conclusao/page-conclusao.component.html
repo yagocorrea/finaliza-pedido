@@ -1,0 +1,224 @@
+<div class="ContentPageVenda_Container">
+  <div class="PageSucesso">
+    <div class="BannerSuperior">
+      <img
+        src="{{ custom.sistema.banners.conclusao.desktop }}?t={{ time }}"
+        alt="Banner"
+        alt="Banner"
+        class="BannerSuperior_Item"
+      />
+    </div>
+
+    <div class="PageSucesso_Head">
+      <div class="PageSucesso_Head_Icone">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <div class="PageSucesso_Head_Titulo" *ngIf="!isPix()">
+        Seu pedido foi gerado com sucesso!
+      </div>
+
+      <div class="PageSucesso_Head_Titulo" *ngIf="isPix()">
+        Seu pagamento foi realizado com sucesso!
+      </div>
+
+      <div class="PageSucesso_Head_Subtitulo">
+        Número do pedido: #{{ proposta?.numeroProposta }}
+      </div>
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isBoleto() && isCorretor()">
+      <b>O boleto digital do pedido já está disponível!</b>
+      <br />
+      Para acessar o boleto, clique no botão "<b>ABRIR BOLETO</b>" abaixo ou
+      envie o boleto ao seu cliente para que o pagamento seja realizado através
+      do botão "<b>COMPARTILHAR POR E-MAIL OU WHATSAPP</b>".
+      <br />
+      ⚠️ <b>Importante:</b> O contrato deste pedido só será emitido e enviado
+      por e-mail após a confirmação do primeiro pagamento. A implantação na
+      <b>MaisDental.com</b> ocorrerá conforme a vigência escolhida.
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isBoleto() && !isCorretor()">
+      <b>Seu boleto digital está disponível!</b>
+      <br />
+      Para confirmar seu pedido, clique no botão "<b>ABRIR BOLETO</b>" abaixo e
+      realize o pagamento.
+      <br />
+      ⚠️ <b>Importante:</b> O contrato deste pedido só será emitido e enviado
+      por e-mail após a confirmação do primeiro pagamento. A implantação na
+      <b>MaisDental.com</b> ocorrerá conforme a vigência escolhida.
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isCartao()">
+      Em breve o responsável financeiro informado receberá um e-mail de
+      confirmação deste pedido. Informamos que o pedido via Cartão de Crédito
+      foi recebido com sucesso e está sendo processado. Importante ressaltar que
+      o contrato deste pedido será emitido e enviado por e-mail na vigência
+      escolhida; bem como sua implantação junto à MaisDental.com.
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isPix()">
+      Em breve o responsável financeiro informado receberá um e-mail de
+      confirmação deste pedido. Informamos que o pedido via PIX foi recebido com
+      sucesso e está sendo processado. Importante ressaltar que o contrato deste
+      pedido será emitido e enviado por e-mail na vigência escolhida; bem como
+      sua implantação junto à MaisDental.com.
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isEmail()">
+      Em breve o responsável financeiro informado receberá um e-mail de
+      confirmação deste pedido com um link para selecionar a modalidade de
+      carência e a forma de pagamento desejada. Somente após a confirmação do 1º
+      pagamento o contrato deste pedido será emitido e enviado por e-mail. Bem
+      como a implantação junto à MaisDental.com na vigência escolhida.
+    </div>
+
+    <div class="PageSucesso_BlocoLink" *ngIf="isEmail() || isBoleto()">
+      <div class="PageSucesso_BlocoLink_Texto" *ngIf="isEmail()">
+        Para enviar diretamente para seu cliente, segue abaixo o link para
+        escolha do tempo de carência, da forma de pagamento e conclusão do
+        pedido
+      </div>
+
+      <div class="PageSucesso_BlocoLink_Texto" *ngIf="isBoleto()">
+        Segue abaixo o link para o acesso ao boleto digital de cobrança:
+      </div>
+      <div class="PageSucesso_BlocoLink_CodigoDigitavel">
+        <input
+          [value]="urlFinalizaPgto"
+          class="BlocoLink_CodigoDigitavel_Input"
+          disabled
+        />
+        <div class="BlocoLink_CodigoDigitavel_Buttons">
+          <div class="CodigoDigitavel_Buttons_Item" *ngIf="isEmail()">
+            <button
+              class="Buttons_Item_Elemento __is-CopiarCodigo __is-active Btn_Copiar_Link"
+              (click)="CopiarCodigo()"
+            >
+              <i class="fa-solid fa-copy"></i> Copiar
+            </button>
+          </div>
+          <div class="CodigoDigitavel_Buttons_Item" *ngIf="isBoleto()">
+            <button
+              class="CodPix_Botao Buttons_Item_Elemento __is-CopiarCodigo __is-active"
+              (click)="AbrirLinkFatura()"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              ABRIR BOLETO
+            </button>
+          </div>
+          <div class="CodigoDigitavel_Buttons_Item">
+            <button
+              class="Buttons_Item_Elemento __is-CompartilharLink"
+              (click)="CompartilharData()"
+              *ngIf="isCorretor()"
+            >
+              <i class="fa-solid fa-share-nodes"></i> Compartilhar por e-mail ou
+              Whatsapp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="PageSucesso_Alerta" *ngIf="isEmail()">
+      <b>ATENÇÃO:</b> Esta é uma solicitação de proposta. A mesma somente será
+      válida e aceita junto à operadora quando da confirmação do primeiro
+      pagamento, via boleto online ou cartão de crédito, e desde que o referido
+      pagamento ocorra no máximo até 10 dias a contar da data de vigência
+      prevista nesta solicitação. Não ocorrendo o primeiro pagamento até o prazo
+      supra mencionado, esta solicitação perderá a validade e será necessário o
+      preenchimento de uma nova que obedecerá às novas condições comerciais,
+      datas de vigência, respectivos valores e coberturas de cada plano.
+    </div>
+
+    <div class="PageSucesso_Informacao" *ngIf="isPix()">
+      <b>ATENÇÃO:</b> Esta é uma solicitação de proposta. A mesma somente será
+      válida e aceita junto à operadora quando da confirmação do primeiro
+      pagamento, via boleto online ou cartão de crédito, e desde que o referido
+      pagamento ocorra no máximo até 10 dias a contar da data de vigência
+      prevista nesta solicitação. Não ocorrendo o primeiro pagamento até o prazo
+      supramencionado, esta solicitação perderá a validade e será necessário o
+      preenchimento de uma nova que obedecerá às novas condições comerciais,
+      datas de vigência, respectivos valores e coberturas de cada plano.
+    </div>
+
+    <div class="PageSucesso_OQueFazerAgora">
+      <div class="PageSucesso_OQueFazerAgora_Titulo">O que fazer agora?</div>
+      <div class="PageSucesso_OQueFazerAgora_Conteudo">
+        <div
+          class="OQueFazerAgora_Conteudo_Item"
+          *ngIf="isEmail() || isBoleto()"
+        >
+          <div class="Conteudo_Item_Head">
+            <div class="Item_Head_Contador">1º</div>
+            <div class="Item_Head_Icone">
+              <img src="assets/img/icone-realizar-o-pagamento.svg" />
+            </div>
+          </div>
+          <div class="Conteudo_Item_Titulo">Realizar o pagamento</div>
+          <div class="Conteudo_Item_Descricao" *ngIf="isEmail()">
+            Para pedidos em cartão de crédito, confira previamente se há
+            crédito, pois o pagamento será debitado automaticamente na data de
+            vigência selecionada. Para opção de boleto, você receberá seu boleto
+            digital online e após a confirmação bancária seu pedido será
+            processado e encaminhado para implantação conforme a vigência
+            escolhida.
+          </div>
+
+          <div class="Conteudo_Item_Descricao" *ngIf="isBoleto()">
+            <b>Efetive o pagamento do seu boleto digital</b> com o link
+            informado acima nesta tela, após a confirmação bancária seu pedido
+            será processado e encaminhado para implantação conforme a vigência
+            escolhida.
+          </div>
+        </div>
+        <div
+          class="OQueFazerAgora_Conteudo_Divisor"
+          *ngIf="!isPix() && !isCartao()"
+        ></div>
+        <div class="OQueFazerAgora_Conteudo_Item">
+          <div class="Conteudo_Item_Head">
+            <div class="Item_Head_Contador" *ngIf="isPix() || isCartao()">
+              1º
+            </div>
+            <div class="Item_Head_Contador" *ngIf="!isPix() && !isCartao()">
+              2º
+            </div>
+            <div class="Item_Head_Icone">
+              <img src="assets/img/icone-validacao.svg" />
+            </div>
+          </div>
+          <div class="Conteudo_Item_Titulo">
+            Validação e aprovação dos dados coletados
+          </div>
+          <div class="Conteudo_Item_Descricao">
+            Com o pagamento confirmado, os dados informados serão validados para
+            liberação e implantação da proposta em nosso sistema.
+          </div>
+        </div>
+        <div class="OQueFazerAgora_Conteudo_Divisor"></div>
+        <div class="OQueFazerAgora_Conteudo_Item">
+          <div class="Conteudo_Item_Head">
+            <div class="Item_Head_Contador" *ngIf="isPix() || isCartao()">
+              2º
+            </div>
+            <div class="Item_Head_Contador" *ngIf="!isPix() && !isCartao()">
+              3º
+            </div>
+            <div class="Item_Head_Icone">
+              <img src="assets/img/icon-recebimento-dos-kits.svg" />
+            </div>
+          </div>
+          <div class="Conteudo_Item_Titulo">
+            Recebimento dos kits dos associados
+          </div>
+          <div class="Conteudo_Item_Descricao">
+            Após a ativação do seu plano, você receberá os kits dos
+            beneficiários contendo os cartões de identificação (carteirinha).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

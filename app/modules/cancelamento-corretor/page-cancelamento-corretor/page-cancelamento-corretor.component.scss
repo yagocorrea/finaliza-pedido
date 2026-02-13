@@ -1,0 +1,53 @@
+@use "../../../../scss/_variables.scss";
+
+.__PageCancelamentoCorretor .ContentPageVenda_Container {
+  padding-bottom: none;
+  padding: 30px;
+
+  .CancelamentoConcluidoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    text-align: center;
+
+
+    i {
+      font-size: 48px;
+      color: #20BB67;
+    }
+
+    .CancelamentoConcluidoContainer_Title {
+      color: #20BB67;
+      // color: var(--Color-MD2);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .CancelamentoConcluidoContainer_Text {
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--Color-MD4);
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .__PageCancelamentoCorretor {
+    padding: 10px;
+  }
+
+  .CancelamentoConcluidoContainer_Title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .CancelamentoConcluidoContainer_Text {
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--Color-MD4);
+  }
+
+}

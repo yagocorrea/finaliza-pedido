@@ -1,0 +1,18 @@
+@use "../../../../scss/_variables.scss";
+
+app-page-escolha-forma-pagamento {
+  width: 100% !important;
+}
+
+.BannerMiolo{
+  .BannerMiolo_Item{
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ContentPageVenda {
+    padding: 10px !important;
+  }
+}

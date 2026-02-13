@@ -1,0 +1,36 @@
+<div class="Container_ContentPrincipal_Row __DuasColunas">
+  <div class="BannerMioloQuadrado">
+    <!-- <img src="assets/img/banner-miolo-quadrado-v2.jpg" alt="Banner" class="BannerMioloQuadrado_Item"> -->
+
+    <img
+      src="{{ custom.sistema.banners.mioloQuadradoV2.desktop }}?t={{ time }}"
+      alt="Banner"
+      alt="Banner"
+      class="BannerMioloQuadrado_Item"
+    />
+  </div>
+  <div class="GerarPagamentoBoleto">
+    <div class="GerarPagamentoBoleto_Content">
+      <div class="GerarPagamentoBoleto_Content_Icone">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+      </div>
+      <div class="GerarPagamentoBoleto_Content_Titulo">
+        Clique no botão abaixo para gerar o boleto de pagamento.
+      </div>
+      <div class="RecaptchaLinha">
+        <!-- <app-recaptcha
+          (setRecapthaCheckedEmitter)="setRecaptchaChecked($event)"
+        ></app-recaptcha> -->
+      </div>
+      <app-button-navigate
+        (onClickEmitter)="FinalizaPedido()"
+        [buttonText]="'Gerar boleto para pagamento'"
+        [buttonClassDynamic]="{
+          'disabled-class': !carenciaChecked || disableSendButton
+        }"
+        [isDisabled]="!carenciaChecked || disableSendButton"
+      >
+      </app-button-navigate>
+    </div>
+  </div>
+</div>

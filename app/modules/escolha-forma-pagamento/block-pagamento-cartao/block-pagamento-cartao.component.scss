@@ -1,0 +1,412 @@
+@use "../../../../scss/_variables.scss";
+
+.alert-danger {
+  color: #f56c6c;
+  font-size: 12px;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.selected-option {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.selected-option-content {
+  display: flex;
+  align-items: center;
+}
+
+.selected-option-content img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.select-option-icone{
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.options-container {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+.Container_ContentPrincipal_Row {
+  margin-top: 48px;
+  &.__DuasColunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  &.__DuasColunasCustomCartaoDeCredito {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+  }
+}
+
+.BlocoSecundarioCartao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  margin-bottom: 40px;
+  .BlocoSecundarioCartao_ContentPrincipal{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+}
+
+.ImageCartaoDeCredito_ContainerFix {
+  width: 314px;
+  height: 228px;
+  perspective: 1000px;
+
+  &.__is-active {
+    .ImageCartaoDeCredito {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.ImageCartaoDeCredito {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+  .ImageCartaoDeCredito_Front {
+    background-color: #EBEBEB;
+    border-radius: 12px;
+    padding: 24px 32px;
+
+    .ImageCartaoDeCredito_Front_NomeBanco {
+      font-size: 20px;
+      line-height: 28px;
+      color: #000;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .ImageCartaoDeCredito_Front_RowNumeroEChip {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 16px;
+      align-items: center;
+      justify-content: flex-start;
+
+      .Front_RowNumeroEChip_Chip {
+        img {
+          width: 40px;
+        }
+      }
+
+      .Front_RowNumeroEChip_NumeroCartao {
+        display: flex;
+        flex-direction: row;
+        grid-gap: 16px;
+
+        .RowNumeroEChip_NumeroCartao_Conjunto {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .ImageCartaoDeCredito_Front_RowDupla {
+      display: flex;
+      flex-direction: row;
+      grid-gap: 16px;
+      margin: 18px 0px;
+
+      .Front_RowDupla_Info {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 6px;
+        width: 100%;
+
+        .RowDupla_Info_Titulo {
+          font-size: 13px;
+          line-height: 14px;
+          text-align: left;
+          font-weight: 600;
+          width: inherit;
+        }
+
+        .RowDupla_Info_Data {
+          font-size: 13px;
+          line-height: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .ImageCartaoDeCredito_Front_RowBasic {
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .ImageCartaoDeCredito_Back {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-color: #EBEBEB;
+    border-radius: 12px;
+    padding: 24px 32px;
+    transform: rotateY(180deg);
+
+    .ImageCartaoDeCredito_Back_Tarja {
+      height: 40px;
+      width: 100%;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      top: 32px;
+    }
+
+    .ImageCartaoDeCredito_Back_CVV {
+      .Back_CVV_Label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #3d3d3d;
+        margin-bottom: 8px;
+      }
+
+      .Back_CVV_Code {
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        color: #383838;
+        padding: 8px 12px;
+        border-radius: 2px;
+        width: calc(100% - 24px);
+        text-align: right;
+      }
+    }
+  }
+
+  .ImageCartaoDeCredito_Front,
+  .ImageCartaoDeCredito_Back {
+    position: absolute;
+    width: calc(100% - 64px);
+    height: calc(100% - 48px);
+    backface-visibility: hidden;
+  }
+}
+
+.FormularioCartaoDeCredito {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+  .FormularioCartaoDeCredito_Row {
+    .FormularioCartaoDeCredito_Row_Item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .Row_Item_Titulo {
+        color: #b4b4b4;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+      }
+      .Row_Item_input {
+        border: none;
+        border-bottom: 1px solid #b4b4b4;
+        outline: none;
+        padding: 6px 0px;
+        width: 100%;
+        transition: 150ms linear;
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid var(--Color-MD2);
+        }
+        &:disabled {
+          background-color: #ebebeb;
+        }
+      }
+      .Row_item_select {
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #b4b4b4;
+        align-items: center;
+      }
+    }
+    &.__Simples {
+    }
+    &.__Dupla {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .BlocoSecundarioCartao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .FormularioCartaoDeCredito {
+      width: 100%;
+      .FormularioCartaoDeCredito_Row {
+        &.__Dupla {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}
+
+.ButtonConcluirPedido {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ButtonConcluirPedido_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: #b5b0b2;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--Color-MD3);
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    padding: 12px 24px;
+    &:hover {
+      background-color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonConcluirPedido_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.RecaptchaLinha {
+  margin: 24px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1280px){
+  .ContentPageVenda{
+    .ContentPageVenda_Container{
+      .ContentPageVenda_Container_Content{
+        .ContentPageVenda_Container_ContentPrincipal{
+          .Container_ContentPrincipal_Row{
+            &.BlocoSecundarioCartao{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1140px){
+  .ContentPageVenda{
+    .ContentPageVenda_Container{
+      .ContentPageVenda_Container_Content{
+        .ContentPageVenda_Container_ContentPrincipal{
+          .Container_ContentPrincipal_Row{
+            &.BlocoSecundarioCartao{
+              display: flex;
+              flex-direction: column-reverse;
+              align-items: flex-start;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ContentPageVenda {
+    &.__is-EstruturaDupla {
+      .ContentPageVenda_Container {
+        .ContentPageVenda_Container_Content {
+          .ContentPageVenda_Container_ContentPrincipal {
+            width: calc(100% - 60px);
+            align-items: center;
+            .Container_ContentPrincipal_Row {
+              &.__DuasColunas {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+              &.__DuasColunasCustomCartaoDeCredito {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+              &.BlocoSecundarioCartao{
+                width: 100%;
+                .BlocoSecundarioCartao_ContentPrincipal{
+                  width: 100%;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

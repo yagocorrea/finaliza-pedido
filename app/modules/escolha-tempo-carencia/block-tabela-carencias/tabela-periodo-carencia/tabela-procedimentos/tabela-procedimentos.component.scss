@@ -1,0 +1,41 @@
+@use "../../../../../../scss/_variables.scss";
+
+.TabelaProcedimento {
+  border: var(--Border-Table);
+  border-spacing: 0px;
+  width: 100%;
+  tbody {
+    tr:nth-child(odd) {
+      background-color: var(--var(--Color-Table-Line2));
+    }
+  
+    tr:nth-child(even) {
+      background-color: var(--Color-Table-Line1);
+      
+    }
+
+    tr {
+      border: var(--Border-Table);
+    }
+    td {
+      padding: 8px;
+      border: var(--Border-Table);
+    }
+  }
+}
+
+.TabelaProcedimentoItem {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--Color-Text-Table);
+}
+
+.TabelaProcedimentoItem_Destaque {
+  color: var(--Color-MD2);
+  font-weight: bold;
+}
+
+.Bottom_Zero {
+  border-bottom: none !important;
+}

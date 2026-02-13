@@ -1,0 +1,245 @@
+@use "../../../../scss/_variables.scss";
+
+.ResumoEscolhas {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 40px;
+  width: fit-content;
+  border: 1px solid #eaeaea;
+  padding: 40px 32px;
+  margin: 0 auto;
+  margin-top: 40px;
+  .ResumoEscolhas_TotalDeCadastros {
+    position: relative;
+    .ResumoEscolhas_TotalDeCadastros_Titulo {
+      color: var(--Color-MD4);
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .ResumoEscolhas_TotalDeCadastros_Quantidade {
+      color: var(--Color-MD2);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .ResumoEscolhas_InputsTitularesDependentes {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 32px;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    padding-left: 40px;
+    padding-right: 40px;
+    .ResumoEscolhas_InputsTitularesDependentes_Item {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+      .InputsTitularesDependentes_Item_Titulo {
+        color: var(--Color-MD4);
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+      .InputsTitularesDependentes_Item_Input {
+        input {
+          max-width: 140px;
+          border: 1px solid #e7e7e7;
+          color: var(--Color-MD2);
+          padding: 8px 16px;
+          text-align: center;
+          outline: none;
+          font-size: 20px;
+          font-weight: 700;
+          transition: 150ms linear;
+          &:focus {
+            border: 1px solid var(--Color-MD2);
+          }
+          &:disabled {
+            background-color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+
+  .ResumoEscolhas_ValorDoPlano {
+    display: flex;
+    flex-direction: column;
+    .ResumoEscolhas_ValorDoPlano_Titulo {
+      color: var(--Color-MD4);
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .ResumoEscolhas_ValorDoPlano_Valor {
+      color: var(--Color-MD2);
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+.ResumoEscolhasBTN {
+  display: none;
+  background-color: inherit;
+  width: 100%;
+  padding: 16px 0;
+  color: var(--Color-MD2);
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.MiniResumo {
+  display: none;
+}
+
+.__hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .ResumoEscolhas {
+    .ResumoEscolhas_InputsTitularesDependentes {
+      flex-direction: column;
+    }
+  }
+  .MiniResumo {
+    display: flex;
+    margin-top: 40px;
+    .MiniResumo_Content {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 16px;
+      .MiniResumo_Content_Titulo {
+        color: #6e6e6e;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .MiniResumo_Content_LinhaSimples {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-gap: 16px;
+        .Content_LinhaSimples_Texto {
+          font-size: 14px;
+          line-height: 20px;
+          color: #b5b0b2;
+          font-weight: 600;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: row;
+          grid-gap: 12px;
+          align-items: center;
+          justify-content: center;
+          .LinhaSimples_Texto_DescontoLabel {
+            color: #20bb67;
+            background-color: #20bb6724;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 4px;
+            border-radius: 4px;
+          }
+        }
+        .Content_LinhaSimples_Preco {
+          color: var(--Color-MD2);
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+      .MiniResumo_Content_Button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 24px 0px 40px 0px;
+        .Content_Button_Item {
+          background-color: #0000;
+          color: var(--Color-MD2);
+          font-size: 16px;
+          font-weight: 700;
+          border: none;
+          display: flex;
+          flex-direction: row;
+          grid-gap: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .ResumoEscolhas {
+    flex-direction: row;
+    grid-gap: 24px;
+    border: none;
+    padding: 0;
+    margin-top: 0px;
+    opacity: 0;
+    display: none;
+    transition: 150ms linear;
+    &.__is-active {
+      display: flex;
+      padding: 16px;
+      opacity: 1;
+    }
+    .ResumoEscolhas_TotalDeCadastros {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+      .ResumoEscolhas_TotalDeCadastros_Titulo {
+        font-size: 12px;
+        line-height: 16px;
+      }
+      .ResumoEscolhas_TotalDeCadastros_Quantidade {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .ResumoEscolhas_InputsTitularesDependentes {
+      flex-direction: row;
+      border-left: 0px;
+      border-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      grid-gap: 24px;
+      .ResumoEscolhas_InputsTitularesDependentes_Item {
+        .InputsTitularesDependentes_Item_Titulo {
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .InputsTitularesDependentes_Item_Input {
+          input {
+            font-size: 16px;
+            line-height: 24px;
+            text-align: left;
+            border: none;
+            padding: 0px;
+            background-color: inherit;
+            width: 72px;
+          }
+        }
+      }
+    }
+    .ResumoEscolhas_ValorDoPlano {
+      display: none;
+    }
+  }
+  .ResumoEscolhasBTN {
+    display: flex;
+    border-top: 1px solid #ededed;
+  }
+}

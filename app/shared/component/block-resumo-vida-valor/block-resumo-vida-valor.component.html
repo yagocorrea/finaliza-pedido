@@ -1,0 +1,44 @@
+<div class="ResumoEscolhas" [class.__is-active]="isAberto">
+  <div class="ResumoEscolhas_TotalDeCadastros">
+    <div class="ResumoEscolhas_TotalDeCadastros_Titulo">
+      Total de cadastrados
+    </div>
+    <div class="ResumoEscolhas_TotalDeCadastros_Quantidade">
+      {{ totalCadastrados }} pessoa{{ totalCadastrados > 1 ? "s" : "" }}
+    </div>
+  </div>
+
+  <div class="ResumoEscolhas_InputsTitularesDependentes">
+    <div class="ResumoEscolhas_InputsTitularesDependentes_Item __is-Titulares">
+      <div class="InputsTitularesDependentes_Item_Titulo">
+        Total de titulares
+      </div>
+      <div class="InputsTitularesDependentes_Item_Input">
+        <input value="{{ totalTitulares }}" disabled />
+      </div>
+    </div>
+    <div
+      class="ResumoEscolhas_InputsTitularesDependentes_Item __is-Dependentes"
+    >
+      <div class="InputsTitularesDependentes_Item_Titulo">
+        Total de dependentes
+      </div>
+      <div class="InputsTitularesDependentes_Item_Input">
+        <input value="{{ totalDependentes }}" disabled />
+      </div>
+    </div>
+  </div>
+
+  <div class="ResumoEscolhas_ValorDoPlano">
+    <div class="ResumoEscolhas_ValorDoPlano_Titulo">Valor do plano/mês</div>
+    <div class="ResumoEscolhas_ValorDoPlano_Valor">
+      {{ valorPlanoMes | currency }}
+    </div>
+  </div>
+</div>
+<button class="ResumoEscolhasBTN" [class.__hidden]="isAberto" (click)="setIsAberto(true)">
+  Exibir detalhes do plano <i class="fa-solid fa-chevron-down"></i>
+</button>
+<button class="ResumoEscolhasBTN" [class.__hidden]="!isAberto" (click)="setIsAberto(false)">
+  Fechar detalhes do plano <i class="fa-solid fa-chevron-up"></i>
+</button>

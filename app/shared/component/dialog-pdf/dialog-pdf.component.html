@@ -1,0 +1,25 @@
+<div class="TermoDeAceite">
+  <span class="container">
+    Ao clicar em <b>Avançar</b>, eu afirmo que <b>li e concordo</b> com os 
+    <a (click)="modalOpenTermo()">termos da solicitação de proposta</a> e <a (click)="modalOpenCoberturas()">resumo das coberturas</a> 
+    da MaisDental.com.
+  </span>
+</div>
+<dialog #modal class="Dialog">
+  <div class="Dialog_Container">
+    <div class="pdfViewer">
+    <pdf-viewer 
+      class="pdfContainer"
+      [src]="pdfSrc" 
+      [render-text]="true" 
+      [original-size]="false"
+    ></pdf-viewer>
+    </div>
+
+    <div class="Dialog_Linha">
+      <button class="ButtonClose Margin0" (click)="modalClose()">
+        Fechar
+      </button>
+    </div>
+  </div>
+</dialog>

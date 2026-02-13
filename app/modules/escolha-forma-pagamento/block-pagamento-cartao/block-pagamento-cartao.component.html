@@ -1,0 +1,245 @@
+<div class="Container_ContentPrincipal_Row BlocoSecundarioCartao">
+  <div class="BannerMioloQuadrado">
+    <img
+      src="{{ custom.sistema.banners.mioloQuadradoCartao.desktop }}?t={{
+        time
+      }}"
+      alt="Banner"
+      class="BannerMioloQuadrado_Item"
+    />
+  </div>
+  <div class="BlocoSecundarioCartao_ContentPrincipal">
+    <div
+      class="ImageCartaoDeCredito_ContainerFix"
+      [class.__is-active]="flipCartao"
+    >
+      <div class="ImageCartaoDeCredito">
+        <div class="ImageCartaoDeCredito_Front">
+          <div class="ImageCartaoDeCredito_Front_NomeBanco">Banco</div>
+          <div class="ImageCartaoDeCredito_Front_RowNumeroEChip">
+            <div class="Front_RowNumeroEChip_Chip">
+              <img src="assets/img/icone-chip-cartao.svg" />
+            </div>
+            <div class="Front_RowNumeroEChip_NumeroCartao">
+              <div class="RowNumeroEChip_NumeroCartao_Conjunto">1234</div>
+              <div class="RowNumeroEChip_NumeroCartao_Conjunto">5678</div>
+              <div class="RowNumeroEChip_NumeroCartao_Conjunto">1234</div>
+              <div class="RowNumeroEChip_NumeroCartao_Conjunto">5678</div>
+            </div>
+          </div>
+          <div class="ImageCartaoDeCredito_Front_RowDupla">
+            <div class="Front_RowDupla_Info">
+              <div class="RowDupla_Info_Titulo">Cliente desde</div>
+              <div class="RowDupla_Info_Data">03/07</div>
+            </div>
+            <div class="Front_RowDupla_Info">
+              <div class="RowDupla_Info_Titulo">Válido até</div>
+              <div class="RowDupla_Info_Data">03/22</div>
+            </div>
+          </div>
+          <div class="ImageCartaoDeCredito_Front_RowBasic">
+            <div class="Front_RowBasic_NomeNoCartao">
+              Joaquim da Silva Souza
+            </div>
+          </div>
+        </div>
+        <div class="ImageCartaoDeCredito_Back">
+          <div class="ImageCartaoDeCredito_Back_Tarja"></div>
+
+          <div class="ImageCartaoDeCredito_Back_CVV">
+            <div class="Back_CVV_Label">Código de Segurança</div>
+            <div class="Back_CVV_Code">9999</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="FormularioCartaoDeCredito" [formGroup]="formCartao">
+      <div class="FormularioCartaoDeCredito_Row __Simples">
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Bandeira do Cartão de Crédito</div>
+          <div class="custom-select">
+            <div class="selected-option" (click)="toggleOptions()">
+              <div class="selected-option-content">
+                <img
+                  [src]="selectedOption.img"
+                  [alt]="selectedOption.label"
+                  *ngIf="selectedOption.img"
+                />
+                <span>{{ selectedOption.label }}</span>
+              </div>
+              <i class="fa-solid fa-angle-down select-option-icone"></i>
+            </div>
+            <div
+              id="optionsContainer"
+              class="options-container"
+              *ngIf="showOptions"
+            >
+              <div
+                class="option"
+                *ngFor="let op of opcoes"
+                (click)="selectOption(op)"
+              >
+                <img [src]="op.img" [alt]="op.label" *ngIf="op.img" />
+                <span>{{ op.label }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="FormularioCartaoDeCredito_Row __Simples">
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Número do Cartão de Crédito</div>
+          <input
+            id="numeroCartao"
+            class="Row_Item_input"
+            formControlName="numeroCartao"
+            placeholder="9999 9999 9999 9999"
+            inputmode="numeric"
+            mask="0000 0000 0000 0999"
+            [minlength]="16"
+            [maxLength]="19"
+            (input)="detectorBandeira()"
+          />
+          <div
+            *ngIf="
+              formCartao.get('numeroCartao')?.invalid &&
+              formCartao.get('numeroCartao')?.touched
+            "
+            class="alert-danger"
+          >
+            <div *ngIf="formCartao.get('numeroCartao')?.errors?.['required']">
+              O Número do Cartão é obrigatório
+            </div>
+            <div
+              *ngIf="
+                formCartao.get('numeroCartao')?.errors?.['numeroCartaoInvalido'] ||
+                formCartao.get('numeroCartao')?.errors?.['minlength'] ||
+                formCartao.get('numeroCartao')?.errors?.['maxLength'] ||
+                formCartao.get('numeroCartao')?.errors?.['numeroCartaoZerado']
+              "
+            >
+              O Número do Cartão Inválido
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="FormularioCartaoDeCredito_Row __Dupla">
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Nome impresso no cartão</div>
+          <input
+            id="nome"
+            class="Row_Item_input"
+            formControlName="nome"
+            placeholder="Nome impresso no cartão"
+          />
+          <div
+            *ngIf="
+              formCartao.get('nome')?.invalid && formCartao.get('nome')?.touched
+            "
+            class="alert-danger"
+          >
+            <div *ngIf="formCartao.get('nome')?.errors?.['required']">
+              O Nome do Cartão é obrigatório
+            </div>
+            <div *ngIf="formCartao.get('nome')?.errors?.['nomeInvalido']">
+              O Nome do Cartão inválido
+            </div>
+          </div>
+        </div>
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Validade</div>
+          <input
+            id="dataValidade"
+            class="Row_Item_input"
+            formControlName="dataValidade"
+            placeholder="MM/AA"
+            [dropSpecialCharacters]="false"
+            inputmode="numeric"
+            mask="90/00"
+          />
+          <div
+            *ngIf="
+              formCartao.get('dataValidade')?.invalid &&
+              formCartao.get('dataValidade')?.touched
+            "
+            class="alert-danger"
+          >
+            <div *ngIf="formCartao.get('dataValidade')?.errors?.['required']">
+              O Validade do Cartão é obrigatório
+            </div>
+            <div
+              *ngIf="formCartao.get('dataValidade')?.errors?.['dataInvalida'] || formCartao.get('dataValidade')?.errors?.['minLength']"
+            >
+              O Validade do Cartão inválido
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="FormularioCartaoDeCredito_Row __Dupla">
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Código de Segurança</div>
+          <input
+            id="codigoSeguranca"
+            class="Row_Item_input"
+            formControlName="codigoSeguranca"
+            placeholder="999"
+            [minlength]="3"
+            [maxLength]="4"
+            inputmode="numeric"
+            mask="0009"
+            (focus)="onFocus($event)"
+            (focusout)="onFocusOut($event)"
+          />
+          <div
+            *ngIf="
+              formCartao.get('codigoSeguranca')?.invalid &&
+              formCartao.get('codigoSeguranca')?.touched
+            "
+            class="alert-danger"
+          >
+            <div
+              *ngIf="formCartao.get('codigoSeguranca')?.errors?.['required']"
+            >
+              O Código de Segurança é obrigatório
+            </div>
+            <div
+              *ngIf="
+                formCartao.get('codigoSeguranca')?.errors?.['cvvInvalida'] ||
+                formCartao.get('codigoSeguranca')?.errors?.['maxLength'] ||
+                formCartao.get('codigoSeguranca')?.errors?.['minLength'] ||
+                formCartao.get('codigoSeguranca')?.errors?.['numeroCvvZerado']
+              "
+            >
+              O Código de Segurança inválido
+            </div>
+          </div>
+        </div>
+        <div class="FormularioCartaoDeCredito_Row_Item">
+          <div class="Row_Item_Titulo">Número de Parcelas</div>
+          <input
+            class="Row_Item_input"
+            placeholder="Mensal"
+            [value]="cicloPagamento"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="RecaptchaLinha">
+        <!-- <app-recaptcha
+            (setRecapthaCheckedEmitter)="setRecaptchaChecked($event)"
+        ></app-recaptcha> -->
+      </div>
+
+      <app-button-navigate
+        typeBtn="submit"
+        (onClickEmitter)="FormValido()"
+        [buttonText]="'Concluir pedido'"
+        [buttonClassDynamic]="{
+          'disabled-class': !(carenciaChecked && formCartao.valid) || disableSendButton
+        }"
+        [isDisabled]="!(carenciaChecked && formCartao.valid) || disableSendButton"
+      >
+      </app-button-navigate>
+    </form>
+  </div>
+</div>

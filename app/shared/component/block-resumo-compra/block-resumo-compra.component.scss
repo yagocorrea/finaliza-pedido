@@ -1,0 +1,130 @@
+@use "../../../../scss/_variables.scss"; 
+
+.LateralResumoDaCompra{
+    padding: 30px;
+    .LateralResumoDaCompra_ButtonClose{
+        display: none;
+    }
+    .LateralResumoDaCompra_Content{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 16px;
+        .LateralResumoDaCompra_Content_Titulo{
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: bold;
+            color: var(--Color-MD4);
+        }
+        .LateralResumoDaCompra_Content_Principal{
+            display: flex;
+            flex-direction: column;
+            grid-gap: 16px;
+            .Content_Principal_Item{
+                .Principal_Item_Titulo{
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: var(--Color-MD5);
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                .Principal_Item_TituloMenor{
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: var(--Color-MD5);
+                    font-weight: 600;
+                }
+                .Principal_Item_DetalheTexto{
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: var(--Color-MD2);
+                    font-weight: 600;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    grid-gap: 16px;
+                    .Item_DetalheTexto_Btn{
+                        background-color: inherit;
+                        border: none;
+                        cursor: pointer;
+                        color: var(--Color-MD1);
+                        font-size: 14px;
+                        line-height: 20px;
+                        text-decoration: underline;
+                        font-weight: 700;
+                        transition: 150ms linear;
+                        padding: 0px;
+                        margin: 0px;
+                        text-align: right;
+                        &:hover{
+                            color: var(--Color-MD2);
+                        }
+                    }
+                }
+                &.__DestaqueFinal{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .Principal_Item_Titulo{
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 600;
+                    }
+                    .Principal_Item_Preco{
+                        color: var(--Color-MD4);
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 600;
+                    }
+                }
+                &.__Isencao{
+                    display: flex;
+                    flex-direction: row;
+                    grid-gap: 16px;
+                    justify-content: space-between;
+                    .Principal_Item_Isencao{
+                        color: var(--Color-MD4);
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 600;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.__hidden {
+    display: none;
+}
+
+@media screen and (max-width: 840px){
+    .LateralResumoDaCompra{
+        .LateralResumoDaCompra_ButtonClose{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--Color-MD2);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            grid-gap: 6px;
+            font-size: 12px;
+            line-height: 12px;
+            i{
+                font-size: 20px;
+            }
+        }
+        .LateralResumoDaCompra_Content{
+            .LateralResumoDaCompra_Content_Principal{
+                .Content_Principal_Item{
+                    .Principal_Item_DetalheTexto{
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+                
+            }
+        }
+    }
+}

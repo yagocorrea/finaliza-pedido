@@ -1,0 +1,253 @@
+@use "../../../../scss/_variables.scss";
+
+#CardsTempoCarencia {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 48px;
+  margin-top: 40px;
+  // width: 790px;
+  width: 90%;
+  margin: 40px auto 0;
+  .CardsTempoCarencia_Item {
+    border: 1px solid #dfdfdf;
+    transition: 150ms linear;
+    position: relative;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 2px 20px 2px #ffd10040;
+      border-color: #ffa101;
+    }
+    &:after {
+      content: " ";
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-size: contain;
+      position: absolute;
+      top: -12px;
+      right: -36px;
+      background-repeat: no-repeat;
+      transform: rotate(18deg);
+    }
+    &.__is-CarenciaReduzida:after {
+      background-image: url(../../../../assets/img/img-carencia-reduzida.png);
+      // background-color: white;
+    }
+    &.__is-CarenciaZero:after {
+      // background-color: white;
+      background-image: url(../../../../assets/img/img-carencia-zero-total.png);
+    }
+    .CardsTempoCarencia_Item_Header {
+      background-image: linear-gradient(90deg, #ff9d00, #ffb701);
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--Color-MD3);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 16px 6px;
+      border-radius: 16px 16px 0px 0px;
+    }
+    .CardsTempoCarencia_Item_Content {
+      padding: 24px 16px;
+      .Item_Content_TituloTempo {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 800;
+        color: var(--Color-MD4);
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &:after {
+          content: " ";
+          display: block;
+          width: 100px;
+          height: 4px;
+          background-color: var(--Color-MD1);
+          margin-top: 16px;
+          margin-bottom: 24px;
+        }
+      }
+      .Item_Content_Preco {
+        text-align: center;
+        .Content_Preco_Text {
+          color: #8a8585;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+        }
+        .Content_Preco_Valor {
+          color: var(--Color-MD2);
+          font-size: 21px;
+          line-height: 29px;
+          font-weight: 700;
+        }
+      }
+      .Item_Content_Obs {
+        display: flex;
+        flex-direction: row;
+        grid-gap: 8px;
+        align-items: flex-start;
+        margin-top: 24px;
+        .Content_Obs_Text {
+          font-size: 10px;
+          text-transform: uppercase;
+          color: #b5b0b2;
+          font-weight: 700;
+          .Content_Obs_Destaque {
+            color: var(--Color-MD2);
+          }
+        }
+        .Content_Obs_Desconto {
+          background-color: var(--Color-MD3);
+          color: #ada500;
+          font-weight: 700;
+          font-size: 14px;
+          padding: 2px 5px;
+          border-radius: 4px;
+        }
+      }
+    }
+    .CardsTempoCarencia_Item_Button {
+      background-color: var(--Color-MD2);
+      color: var(--Color-MD3);
+      width: 100%;
+      padding: 12px 0px;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 150ms linear;
+      border-radius: 0px 0px 16px 16px;
+      margin-top: auto;
+      &:hover {
+        background-color: var(--Color-MD1);
+      }
+    }
+    &.__is-Destaque {
+      .CardsTempoCarencia_Item_Header {
+        background-image: linear-gradient(90deg, #9747ff, #9747ff) !important;
+      }
+      &:hover {
+        border-color: #9747ff !important;
+      }
+      &:after {
+        background-image: url(../../../../assets/img/icon-destaque.svg) !important;
+        transform: rotate(0);
+        top: -16px;
+        right: -36px;
+        width: 72px;
+        height: 72px;
+        animation: animaBadgeDestaque 1s infinite;
+      }
+    }
+    &.__is-active {
+      .CardsTempoCarencia_Item_Button {
+        background-color: #31bb5c;
+      }
+    }
+    &.__no-carencia-zero {
+
+        &:hover {
+          box-shadow: 0px 2px 20px 2px var(--Color-MD2)-40;
+          border-color: var(--Color-MD1);
+        }
+        // .CardsTempoCarencia_Item_Header {
+        //   background-image: linear-gradient(90deg, var(--Color-MD1), var(--Color-MD1));
+        // }
+
+      // &:after {
+      //   background-image: none;
+      // }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  #CardsTempoCarencia {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .CardsTempoCarencia_Item {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #CardsTempoCarencia {
+    grid-gap: 32px;
+    .CardsTempoCarencia_Item {
+      width: 70%;
+      &:after {
+        width: 48px;
+        height: 48px;
+        right: -27px;
+      }
+      &.__is-Destaque {
+        &:after {
+          width: 48px;
+          height: 48px;
+          right: -27px;
+        }
+      }
+      .CardsTempoCarencia_Item_Header {
+        font-size: 10px;
+        line-height: 12px;
+      }
+      .CardsTempoCarencia_Item_Content {
+        padding: 12px 8px;
+        .Item_Content_TituloTempo {
+          font-size: 20px;
+          line-height: 28px;
+          &:after {
+            margin-top: 8px;
+            margin-bottom: 16px;
+          }
+        }
+        .Item_Content_Preco {
+          .Content_Preco_Text {
+            font-size: 12px;
+            line-height: 14px;
+          }
+          .Content_Preco_Valor {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        .Item_Content_Obs {
+          grid-gap: 4px;
+          .Content_Obs_Text {
+            font-size: 8px;
+            line-height: 12px;
+          }
+          .Content_Obs_Desconto {
+            font-size: 12px;
+            padding: 2px;
+          }
+        }
+      }
+      .CardsTempoCarencia_Item_Button {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@keyframes animaBadgeDestaque {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}

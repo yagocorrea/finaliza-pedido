@@ -1,0 +1,52 @@
+@use "../../../../scss/_variables.scss";
+
+app-title-underline {
+    width: 90%;    
+}
+
+.PageTitulo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px 0;
+    width: 100%;
+    max-width: 90%;
+
+    .PageTitulo_Container {
+        grid-gap: 8px;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        .PageTitulo_Container_Principal {
+            color: #25282b;
+            font-size: 28px;
+            font-weight: 700;
+            padding-right: 104px;
+        }
+
+        .PageTitulo_Container_Detalhe {
+            border-top: 1px solid var(--Color-MD2);
+
+            .Container_Detalhe_Content {
+                width: 64px;
+                height: 6px;
+                background-color: var(--Color-MD2);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .PageTitulo {
+        .PageTitulo_Container {
+            width: 100%;
+
+            .PageTitulo_Container_Principal {
+                padding-right: 0px;
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+    }
+}

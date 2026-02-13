@@ -1,0 +1,153 @@
+@use "../../../../scss/_variables.scss";
+
+.Content_Principal_ItemLayoutSecundario {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+
+  .Principal_ItemLayoutSecundario_TituloPrincipal {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    color: var(--Color-MD4);
+  }
+
+  .Principal_ItemLayoutSecundario_Box {
+    border: solid 1px #e6e6e6;
+    padding: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+
+    .ItemLayoutSecundario_Box_Titulo {
+      color: var(--Color-MD2);
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .ItemLayoutSecundario_Box_LinhaSimples {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 16px;
+
+      .Box_LinhaSimples_Titulo {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        color: var(--Color-MD5);
+      }
+
+      .Box_LinhaSimples_ValorModelo1 {
+        color: var(--Color-MD4);
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+
+      .Box_LinhaSimples_ValorModelo2 {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 8px;
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-transform: uppercase;
+        font-size: 9px;
+        color: #6E6E6E;
+        font-weight: 400;
+        text-align: right;
+
+        .LinhaSimples_ValorModelo2_Badge {
+          display: block;
+          color: #20bb67;
+          background-color: #20bb6729;
+          padding: 4px 6px;
+          font-size: 16px;
+          font-weight: 600;
+          border-radius: 8px;
+          text-transform: none;
+        }
+      }
+    }
+
+    .ItemLayoutSecundario_Box_LinhaComplexa {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid #e6e6e6;
+      padding-top: 14px;
+
+      .Box_LinhaComplexa_Titulo {
+        color: var(--Color-MD2);
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+
+        .LinhaComplexa_Titulo_Obs {
+          font-size: 12px;
+          line-height: 20px;
+        }
+      }
+
+      .Box_LinhaComplexa_Valor {
+        color: var(--Color-MD2);
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .Content_Principal_ItemLayoutSecundario {
+      padding-bottom: 24px;
+  
+      .Principal_ItemLayoutSecundario_Box {
+        grid-gap: 24px;
+  
+        .ItemLayoutSecundario_Box_LinhaComplexa {
+          .Box_LinhaComplexa_Titulo {
+            .LinhaComplexa_Titulo_Obs {
+              display: block;
+            }
+          }
+        }
+  
+        .Box_LinhaSimples_ValorModelo1 {
+          font-size: 16px !important;
+        }
+  
+        .Box_LinhaSimples_ValorModelo2 {
+          font-size: 7px !important;
+  
+          .LinhaSimples_ValorModelo2_Badge {
+            font-size: 14px !important;
+          }
+        }
+  
+        .Box_LinhaComplexa_Valor {
+          font-size: 20px !important;
+        }
+  
+        .Box_LinhaSimples_Titulo {
+          font-size: 13px !important;
+        }
+  
+        .Box_LinhaComplexa_Titulo {
+          font-size: 15px !important;
+  
+          .LinhaComplexa_Titulo_Obs {
+            font-size: 11px !important;
+          }
+        }
+      }
+    }
+}

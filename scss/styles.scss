@@ -1,0 +1,589 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "../scss/_variables.scss";
+
+body {
+  background-color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  margin: inherit;
+  padding: inherit;
+  background-color: #f5f5f5;
+}
+
+.ContentPageVenda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  .ContentPageVenda_Container {
+    width: 100%;
+    background-color: var(--Color-MD3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    .ContentPageVenda_Container_Content {
+      max-width: 90%;
+    }
+  }
+  &.__is-EstruturaDupla {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 2.75fr 1.5fr;
+    align-items: flex-start;
+    .ContentPageVenda_Container {
+      padding-bottom: 0px;
+      background-color: inherit;
+      grid-gap: 30px;
+      .ContentPageVenda_Container_Content {
+        width: inherit;
+        max-width: inherit;
+        background-color: var(--Color-MD3);
+        .ContentPageVenda_Container_ContentPrincipal {
+          padding: 30px;
+          .PageTitulo {
+            margin: inherit;
+          }
+          .Container_ContentPrincipal_Row {
+            margin-top: 48px;
+            &.__DuasColunas {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-gap: 30px;
+            }
+            &.__DuasColunasCustomCartaoDeCredito {
+              display: grid;
+              grid-template-columns: 1fr 2fr;
+              grid-gap: 30px;
+            }
+          }
+        }
+        .ContentPageVenda_Container_ContentLateral {
+          .ResumoEscolhas {
+            padding: 30px;
+            grid-gap: 16px;
+            border: none;
+            margin-top: inherit;
+            .ResumoEscolhas_InputsTitularesDependentes {
+              border-right: 0px;
+              padding-right: 0px;
+              grid-gap: 12px;
+              padding-left: 16px;
+            }
+            .ResumoEscolhas_ValorDoPlano {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.RecaptchaLinha {
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.PixLoading {
+  min-height: calc(100vh - 250px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 24px;
+  .PixLoading_Text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #6e6e6e;
+  }
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #1ec5d2 94%, #0000) top/9px 9px
+        no-repeat,
+      conic-gradient(#0000 30%, #1ec5d2);
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 9px),
+      #000 0
+    );
+    animation: spinner-c7wet2 1.2s infinite linear;
+  }
+
+  @keyframes spinner-c7wet2 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.ApresentacaoTexto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+  .ApresentacaoTexto_Container {
+    width: 790px;
+    max-width: 90%;
+    .ApresentacaoTexto_Container_Titulo {
+      color: var(--Color-MD2);
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+    }
+    .ApresentacaoTexto_Container_Texto {
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--Color-MD4);
+    }
+  }
+}
+
+.__AlertaConcluirPedido {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .__ResumoMobilePageLoadingPix {
+    display: none !important;
+  }
+
+  .PixLoading {
+    min-height: 50vh;
+  }
+
+  .ContentPageVenda {
+    &.__is-EstruturaDupla {
+      display: flex;
+      flex-direction: column;
+      .ContentPageVenda_Container {
+        .ContentPageVenda_Container_Content {
+          .ContentPageVenda_Container_ContentPrincipal {
+            display: flex;
+            flex-direction: column;
+            .Container_ContentPrincipal_Row {
+              &.__DuasColunas {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+              &.__DuasColunasCustomCartaoDeCredito {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+            }
+            .CardsFormasDePagamento {
+              .CardsFormasDePagamento_Container {
+                flex-wrap: wrap;
+                .CardsFormasDePagamento_Container_Item {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          &.__LateralResumoDaCompra {
+            display: none;
+            &.__is-activeMobile {
+              display: flex;
+              position: fixed;
+              top: 0;
+              left: 0;
+              background-color: #fff;
+              height: calc(100vh + 10px);
+              overflow: auto;
+            }
+          }
+          .ContentPageVenda_Container_ContentLateral {
+            .ResumoEscolhas {
+              flex-direction: column;
+              .ResumoEscolhas_InputsTitularesDependentes {
+                border-left: inherit;
+                border-top: 1px solid #eaeaea;
+                padding: 40px 0px;
+              }
+            }
+          }
+        }
+      }
+      &.__PageFormaDePagamento {
+        .ContentPageVenda_Container {
+          &.__is-EstruturaDupla_Principal {
+            order: 2;
+          }
+          &.__is-EstruturaDupla_Secundario {
+            order: 1;
+          }
+        }
+      }
+      &.__PageFinalizeSeuPagamento {
+        .ContentPageVenda_Container {
+          &.__is-EstruturaDupla_Principal {
+            order: 2;
+          }
+          &.__is-EstruturaDupla_Secundario {
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+  .__MobileOrder1 {
+    order: 1;
+  }
+  .__MobileOrder2 {
+    order: 2;
+  }
+  .__MobileOrder3 {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .ApresentacaoTexto {
+    .ApresentacaoTexto_Container {
+      .ApresentacaoTexto_Container_Titulo {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      .ApresentacaoTexto_Container_Texto {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+// =========================
+// Banners
+// =========================
+
+.BannerSuperior {
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  a {
+    text-decoration: none;
+    outline: none;
+  }
+  .BannerSuperior_Item {
+    max-width: 100%;
+  }
+  &.__is-boas-vindas {
+    margin-top: 30px;
+  }
+}
+
+.BannerMiolo {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .BannerMiolo_Item {
+    max-width: 100%;
+  }
+}
+
+.BannerMioloQuadrado {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  .BannerMioloQuadrado_Item {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+// =========================
+// Bloco Steps
+// =========================
+.Steps {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+  .Steps_Container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 16px;
+    .Steps_Container_Dots {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 12px;
+      .Container_Dots_Item {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        background-color: #e0e0e0;
+        border-radius: 100px;
+        transition: 150ms linear;
+        &.__is-active {
+          background-color: var(--Color-MD1);
+        }
+        &:hover {
+          background-color: var(--Color-MD1);
+        }
+      }
+    }
+    .Steps_Container_Text {
+      text-transform: uppercase;
+      color: #000;
+      font-size: 15px;
+      line-height: 23px;
+    }
+  }
+}
+
+// =========================
+// Components Button e Alerts
+// =========================
+
+.ButtonSolid {
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: 150ms linear;
+  cursor: pointer;
+  &.__ColorV1 {
+    background-color: #5ad1dc;
+    color: var(--Color-MD3);
+    &:hover {
+      background-color: var(--Color-MD2);
+    }
+  }
+}
+
+.ButtonVoltar {
+  text-decoration: none;
+  margin-top: 40px;
+  .ButtonVoltar_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: inherit;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #b2b2b2;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    &:hover {
+      color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonVoltar_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.ButtonVoltarV2 {
+  text-decoration: none;
+  padding: 0px 30px 30px 30px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  display: block;
+  .ButtonVoltar_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: inherit;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #b2b2b2;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    &:hover {
+      color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonVoltar_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.ButtonAvancar {
+  text-decoration: none;
+  .ButtonAvancar_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: #b5b0b2;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--Color-MD3);
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    padding: 12px 24px;
+    &:hover {
+      background-color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonAvancar_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.ButtonConcluirPedido {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ButtonConcluirPedido_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: #b5b0b2;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--Color-MD3);
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    padding: 12px 24px;
+    &:hover {
+      background-color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonConcluirPedido_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.ButtonTrocarPagamento {
+  text-decoration: none;
+  display: none;
+  width: 100%;
+  .ButtonTrocarPagamento_Item {
+    font-family: "Open sans", sans-serif;
+    background-color: inherit;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #b2b2b2;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 150ms linear;
+    &:hover {
+      color: var(--Color-MD2);
+    }
+  }
+  &.Color2 {
+    .ButtonTrocarPagamento_Item {
+      color: var(--Color-MD2);
+      &:hover {
+        color: var(--Color-MD1);
+      }
+    }
+  }
+}
+
+.AlertaBasic {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 16px;
+  border: 1px solid var(--Color-MD1);
+  padding: 12px;
+  .AlertaBasic_Icone {
+    font-size: 32px;
+    color: var(--Color-MD1);
+  }
+  .AlertaBasic_Texto {
+    color: var(--Color-MD4);
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &.__ExtraGrande {
+    width: calc(90% - 24px);
+    max-width: calc(90% - 24px);
+  }
+  &.__Grande {
+    width: calc(90% - 24px);
+    max-width: calc(1024px - 24px);
+  }
+  &.__Medio {
+    width: calc(90% - 24px);
+    max-width: calc(640px - 24px);
+  }
+  &.__Pequeno {
+    width: calc(90% - 24px);
+    max-width: calc(480px - 24px);
+  }
+  &.__MuitoPequeno {
+    width: calc(90% - 24px);
+    max-width: calc(320px - 24px);
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .ButtonTrocarPagamento {
+    display: flex;
+  }
+}

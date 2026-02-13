@@ -1,0 +1,45 @@
+<div class="Container_ContentPrincipal_Row __DuasColunas">
+  <div class="BannerMioloQuadrado">
+    <!-- <img src="assets/img/banner-miolo-quadrado.jpg" alt="Banner" class="BannerMioloQuadrado_Item"> -->
+
+    <img
+      src="{{ custom.sistema.banners.mioloQuadrado.desktop }}?t={{ time }}"
+      alt="Banner"
+      alt="Banner"
+      class="BannerMioloQuadrado_Item"
+    />
+  </div>
+  <div class="GerarPagamentoPix">
+    <div class="GerarPagamentoPix_Content">
+      <div class="GerarPagamentoPix_Content_Icone">
+        <i class="fa-brands fa-pix"></i>
+      </div>
+      <div class="GerarPagamentoPix_Content_Titulo">
+        Gere o código para pagamento via Pix para continuar
+      </div>
+      <div class="GerarPagamentoPix_Content_Alerta">
+        <div class="Content_Alerta_Icone">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="Content_Alerta_Texto">
+          <b>Atenção:</b> A partir da segunda {{getTermoPgto()}} o pagamento será feito
+          por <b>boleto online</b>.
+        </div>
+      </div>
+      <div class="RecaptchaLinha">
+        <!-- <app-recaptcha
+          (setRecapthaCheckedEmitter)="setRecaptchaChecked($event)"
+        ></app-recaptcha> -->
+      </div>
+      <app-button-navigate
+        (onClickEmitter)="FinalizaPedido()"
+        [buttonText]="'Gerar código para pagamento'"
+        [buttonClassDynamic]="{
+          'disabled-class': !carenciaChecked
+        }"
+        [isDisabled]="!carenciaChecked"
+      >
+      </app-button-navigate>
+    </div>
+  </div>
+</div>
